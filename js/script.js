@@ -128,11 +128,6 @@ $(function() {
 		win.on('scroll', myScroll1);
 
 		function myScroll1(){
-
-			$('.avangard_engineering_technical_services #js-cont-height').css({
-				height: 'auto'
-			});
-
 			var topScroll = win.scrollTop(),
 				scrollPos = topScroll + windowH;
 
