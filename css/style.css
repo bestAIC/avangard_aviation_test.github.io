@@ -364,7 +364,7 @@ INPUT.btn {
 	display: inline-block;
 }
 
-.container-fluid{
+.container_fluid{
 	padding: 0;
 	min-width: 1180px;
 	overflow: hidden;
@@ -1081,6 +1081,11 @@ INPUT.btn {
 	width: 880px;
 	margin: 0 auto;
 }
+.avangard_index .collage.second .collage_img{
+	position: relative;
+	top: 160px;
+}
+
 #animate_index_1{
 	width: auto;
 	top: 60px;
@@ -1120,12 +1125,12 @@ INPUT.btn {
 /* /avangard_index */
 
 /* avangard_about */
-.avangard_about .container-fluid{
+.avangard_about .container_fluid{
 	background: url('../pic/pic_10.jpg') 50% 0 no-repeat;
 	width: 100%;
 }
 @media (min-width:1920px) {
-	.avangard_about .container-fluid{
+	.avangard_about .container_fluid{
 		background: url('../pic/pic_10.jpg') 50% 0 / cover no-repeat;
 		width: 100%;
 	}
