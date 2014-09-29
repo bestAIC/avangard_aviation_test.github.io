@@ -75,6 +75,7 @@ $(function() {
 		});
 
 		function toggleOverlay(e) {
+			e.preventDefault();
 			if(btn.hasClass('close')) {
 				cont.addClass('open').removeClass('close');
 				btn.addClass('open').removeClass('close');
@@ -85,7 +86,7 @@ $(function() {
 				$('.wrapper').removeClass('blur');
 			}
 		};
-
+		
 		btn.on('click', toggleOverlay);
 		close.on('click', toggleOverlay);
 	}
