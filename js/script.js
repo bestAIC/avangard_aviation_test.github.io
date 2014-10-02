@@ -289,7 +289,7 @@ $(function() {
 
 				if(posEl < windowH + posWin + 50){
 					cont.find('img').css({
-						top: -700-delta/2
+						top: -500-delta/2
 					});
 				}
 		})

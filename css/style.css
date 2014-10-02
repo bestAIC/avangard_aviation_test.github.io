@@ -142,9 +142,12 @@ h4{
 }
 
 
-
+FORM{
+	font-size: 18px;
+	font-family: 'helveticaneuecyrlight', sans-serif;
+	letter-spacing: 0.6px;
+}
 INPUT,
-SELECT,
 TEXTAREA {
 	display: block;
 	width: 100%;
@@ -152,8 +155,14 @@ TEXTAREA {
 	box-sizing: border-box;
 	border:2px solid #556a7c;
 	margin:0 0 20px 0; 
-	font-size: 18px;
 	outline: none;
+	font-size: 18px;
+	font-family: 'helveticaneuecyrlight', sans-serif;
+	letter-spacing: 0.6px;
+}
+.jq-selectbox{
+	font-family: 'helveticaneuecyrlight', sans-serif;
+	letter-spacing: 0.6px;
 }
 
 INPUT.btn {
@@ -960,6 +969,7 @@ INPUT.btn {
 .intro p{
 	margin: 0 0 27px 0;
 	line-height: 30px;
+	letter-spacing: 0.9px;
 }
 
 .features {
@@ -968,7 +978,9 @@ INPUT.btn {
 	text-align: center;
 	overflow: hidden;
 }
-
+.features.cols_2{
+	max-width: 960px;
+}
 .features A {
 	color:#ffa904;
 }
@@ -976,6 +988,9 @@ INPUT.btn {
 .features DIV {
 	position: relative;
 	padding: 0 60px;
+}
+.features DIV.col-2{
+	padding: 0 70px;
 }
 
 .features .ico_cover {
@@ -1028,6 +1043,7 @@ INPUT.btn {
 }
 
 
+
 .tbl-icons TD:first-child[colspan="3"],
 .tbl-icons .odd TD:first-child[colspan="3"]{
 	padding-left: 15%;
@@ -1050,7 +1066,7 @@ INPUT.btn {
 }
 
 .managed_aircraft .collage.second{
-	padding: 20px 0;
+	padding: 60px 0;
 }
 .avangard_engineering_technical_services .collage.second IMG,
 .managed_aircraft .collage.second IMG{
