@@ -418,12 +418,14 @@ INPUT.btn {
 }
 
 
+.wrapper{
+	overflow: hidden;		
+}
 .container_fluid{
 	padding: 0;
 	min-width: 1180px;
 	overflow: hidden;
 }
-
 #header{
 	position: absolute;
 	top: 0;
@@ -531,9 +533,6 @@ INPUT.btn {
 .header_shadow{
 	width: 100%;
 	height: 204px;
-	box-sizing: content-box;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
 	position: absolute;
 	top: 0;
 	left: 0;
