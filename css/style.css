@@ -393,6 +393,10 @@ INPUT.btn {
 	color: #e5e7e9;
 	border-color: #263a4c;
 }
+.btn.color_1:active,
+.btn.color_1:focus{
+	background-color: #173f62;
+}
 .btn.color_2{
 	border: 2px solid #fff;
 }
@@ -969,7 +973,7 @@ INPUT.btn {
 
 .collage_down{
 	background: url('../img/ico_4.png') center no-repeat;
-	height: 22px;
+	height: 44px;
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -1141,6 +1145,7 @@ INPUT.btn {
 	font-size: 20px;
 	line-height: 30px;
 	margin-bottom: 30px;
+	font-family: 'helveticaneuecyrlight', sans-serif;
 }
 
 .avangard_index .collage.first .about_text.left{
@@ -1440,10 +1445,10 @@ INPUT.btn {
 }
 .about_raice div{
 	border: 2px solid #406280;
-	-webkit-border-radius: 4px; 
-	-moz-border-radius: 4px; 
-	border-radius: 4px; 
-	padding: 19px 0 16px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	padding: 16px 0 14px;
 	margin-left: 50px;
 	width: 16%;
 	display: inline-block;
@@ -1454,6 +1459,7 @@ INPUT.btn {
 .about_raice .title{
 	color: #556a7c;
 	font-size: 14px;
+	margin-bottom: 10px;
 }
 .about_raice .info{
 	font-size: 18px;
@@ -1480,3 +1486,21 @@ INPUT.btn {
     color: #4272db;
 }
 
+
+/* air_map-form */
+.air_map-block h2{
+	margin-top: 104px;
+}
+.air_map-block form{
+	margin: 50px auto 30px;
+}
+.air_map-block form label{
+	margin-right: 10px;
+}
+.air_map-block form .jq-selectbox{
+	width: 180px;
+	display: inline-block;
+	margin-right: 28px;
+}
+
+/* /air_map-form */
