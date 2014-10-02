@@ -455,6 +455,7 @@ INPUT.btn {
 	height: 100%;
 	top: 0;
 	left: 0;
+	background-color: rgb(107,132,153);
 	background: rgba(107,132,153,0.9);
 	visibility: hidden;
 	opacity: 0;
@@ -606,8 +607,10 @@ INPUT.btn {
 	text-align: center;
 	line-height: 100px;
 }
-.header_top .logo img{
+.header_top .logo SVG{
 	vertical-align: middle;
+	width: 184px;
+	height: 62px;
 }
 
 .header_top .lang-b{
