@@ -607,10 +607,8 @@ INPUT.btn {
 	text-align: center;
 	line-height: 100px;
 }
-.header_top .logo SVG{
+.header_top .logo IMG{
 	vertical-align: middle;
-	width: 184px;
-	height: 62px;
 }
 
 .header_top .lang-b{
