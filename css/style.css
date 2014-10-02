@@ -9,7 +9,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
 /* Elements */
 * {margin:0; padding:0;}
 HTML {height:100%;}
-BODY {height:100%; background:#fff; color:#32404c; font:15px "Helvetica Neue",Helvetica,Arial,sans-serif; min-width:1220px;}
 TABLE {border-spacing:0; border-collapse:collapse;}
 TD,TH {vertical-align:top; text-align:left;}
 IMG,FIELDSET {border:none;}
@@ -19,17 +18,6 @@ A:hover {color:#013e83;}
 P {line-height:1.5em;letter-spacing: -0.1px}
 UL, UL LI {list-style-type:none;}
 EM {font-style:normal;}
-
-*{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-:before, :after{
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;	
-}
 
 /* fonts */
 
@@ -55,7 +43,131 @@ EM {font-style:normal;}
          url('../fonts/circe-extralight-webfont.svg#circe-extralightregular') format('svg');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'helveticaneuecyrultralight';
+    src: url('../fonts/helveticaneuecyr-ultralight-webfont.eot');
+    src: url('../fonts/helveticaneuecyr-ultralight-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneuecyr-ultralight-webfont.woff2') format('woff2'),
+         url('../fonts/helveticaneuecyr-ultralight-webfont.woff') format('woff'),
+         url('../fonts/helveticaneuecyr-ultralight-webfont.ttf') format('truetype'),
+         url('../fonts/helveticaneuecyr-ultralight-webfont.svg#helveticaneuecyrultralight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaneuecyrlight';
+    src: url('../fonts/helveticaneuecyr-light-webfont.eot');
+    src: url('../fonts/helveticaneuecyr-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneuecyr-light-webfont.woff2') format('woff2'),
+         url('../fonts/helveticaneuecyr-light-webfont.woff') format('woff'),
+         url('../fonts/helveticaneuecyr-light-webfont.ttf') format('truetype'),
+         url('../fonts/helveticaneuecyr-light-webfont.svg#helveticaneuecyrlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaneuecyrbold';
+    src: url('../fonts/helveticaneuecyr-bold-webfont.eot');
+    src: url('../fonts/helveticaneuecyr-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneuecyr-bold-webfont.woff2') format('woff2'),
+         url('../fonts/helveticaneuecyr-bold-webfont.woff') format('woff'),
+         url('../fonts/helveticaneuecyr-bold-webfont.ttf') format('truetype'),
+         url('../fonts/helveticaneuecyr-bold-webfont.svg#helveticaneuecyrbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'helveticaneuecyrroman';
+    src: url('../fonts/helveticaneuecyr-roman-webfont.eot');
+    src: url('../fonts/helveticaneuecyr-roman-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/helveticaneuecyr-roman-webfont.woff2') format('woff2'),
+         url('../fonts/helveticaneuecyr-roman-webfont.woff') format('woff'),
+         url('../fonts/helveticaneuecyr-roman-webfont.ttf') format('truetype'),
+         url('../fonts/helveticaneuecyr-roman-webfont.svg#helveticaneuecyrroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:before, :after{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;	
+}
+
+body {
+	height:100%; 
+	width: 100%;
+	background:#fff; 
+	color:#32404c;	
+	font: 18px 'helveticaneuecyrultralight',Helvetica, Arial,sans-serif;
+	letter-spacing: 0.3px;
+	min-width:1220px;
+}
+p {
+	line-height:1.5em;
+	letter-spacing: 0.3px;
+}
+h1{
+	font-family: 'circe-extralightregular', sans-serif;
+	font-size: 100px;
+	text-align: center;
+	font-weight: 100;
+}
+h2{
+	font-family: 'circe-extralightregular', sans-serif;
+	font-size: 70px;
+	line-height: 1;
+	letter-spacing: -0.5px;
+}
+h3{
+	font-family: 'circe-extralightregular', sans-serif;
+	font-size: 50px;
+	line-height: 60px;
+	letter-spacing: -0.3px;
+}
+h4{
+	font-family: 'circe-lightregular', sans-serif;
+	font-size: 30px;
+	line-height: 40px;
+}
+
+
+
+INPUT,
+SELECT,
+TEXTAREA {
+	display: block;
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	border:2px solid #556a7c;
+	margin:0 0 20px 0; 
+	font-size: 18px;
+	outline: none;
+}
+
+INPUT.btn {
+	width: auto;
+	padding: 10px 50px;
+	float:left;
+	-webkit-border-radius: 2px; 
+	-moz-border-radius: 2px; 
+	border-radius: 2px; 
+	background-color: #eeb529;
+	border: 2px solid #eeb529;
+	-webkit-box-shadow: inset 0 -24px rgba(69,67,7,.05); 
+	-moz-box-shadow: inset 0 -24px rgba(69,67,7,.05); 
+	box-shadow: inset 0 -24px rgba(69,67,7,.05);	
 }
 
 /* Columns */
@@ -175,83 +287,6 @@ EM {font-style:normal;}
 	float: right;
 }
 
-body {
-	width: 100%;
-	font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight: 300;
-	letter-spacing: 0.2px;
-	min-width: 100%;
-}
-h1{
-	font-family: 'circe-extralightregular', sans-serif;
-	font-size: 100px;
-	text-align: center;
-	font-weight: 100;
-}
-h2{
-	font-family: 'circe-lightregular', sans-serif;
-	font-weight: 300;
-	font-size: 70px;
-	line-height: 1;
-}
-h3{
-	font-family: 'circe-lightregular', sans-serif;
-	font-weight: 300;
-	font-size: 50px;
-	line-height: 60px;
-	letter-spacing: -0.3px;
-}
-h4{
-	font-family: 'circe-lightregular', sans-serif;
-	font-weight: 300;
-	font-size: 30px;
-	line-height: 40px;
-}
-
-
-
-INPUT,
-SELECT {
-	display: block;
-	width: 100%;
-	padding: 20px;
-	box-sizing: border-box;
-	border:2px solid #556a7c;
-	margin:0 0 20px 0; 
-	font-size: 18px;
-	outline: none;
-	font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight: 300;
-}
-
-TEXTAREA {
-	display: block;
-	width: 100%;
-	padding: 20px;
-	box-sizing: border-box;
-	border:2px solid #556a7c;
-	margin:0 0 20px 0; 
-	font-size: 18px;
-	outline: none;
-	font: 18px "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight: 300;
-}
-
-INPUT.btn {
-	width: auto;
-	padding: 10px 50px;
-	float:left;
-	-webkit-border-radius: 2px; 
-	-moz-border-radius: 2px; 
-	border-radius: 2px; 
-	background-color: #eeb529;
-	border: 2px solid #eeb529;
-	-webkit-box-shadow: inset 0 -24px rgba(69,67,7,.05); 
-	-moz-box-shadow: inset 0 -24px rgba(69,67,7,.05); 
-	box-shadow: inset 0 -24px rgba(69,67,7,.05);	
-}
-
-
 .jq-selectbox{
 	width: 100%;
 	background: #fff;
@@ -324,7 +359,6 @@ INPUT.btn {
 	padding: 10px 20px;
 	font-size: 18px;
 	font-weight: 300;
-	letter-spacing: 0.3px;
 	transition: background-color .25s, color .25s, border-color .25s;
 }
 .btn.color_1{
@@ -481,18 +515,19 @@ INPUT.btn {
 	position: absolute;
 	top: 0;
 	left: 0;
-	background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 80%, rgba(0,0,0,0) 99%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.6)), color-stop(80%,rgba(0,0,0,0)), color-stop(99%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 80%,rgba(0,0,0,0) 99%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 80%,rgba(0,0,0,0) 99%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 80%,rgba(0,0,0,0) 99%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 80%,rgba(0,0,0,0) 99%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.6)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
 }
 
 .header_top{
 	position: relative;
-	max-width: 1180px;
+	min-width: 1180px;
+	max-width: 1280px;
 	margin: 0 auto;
 }
 .menu_top{
@@ -569,6 +604,7 @@ INPUT.btn {
 	text-align: center;
 	color: #3c2f00;
 	line-height: 1;
+	font-family: 'helveticaneuecyrroman', sans-serif;
 }
 .header_top .lang_btn span{
 	padding-top: 6px;
@@ -871,24 +907,22 @@ INPUT.btn {
 .avangard_engineering_technical_services  .intro,
 .managed_aircraft .collage.second  .intro {
 	color:#fff;
-	padding: 100px 0;
+	padding: 34px 0;
 }
 
 .avangard_engineering_technical_services .collage.first .intro H1 {
 	font-size:100px;
-	font-weight: bold;
+	font-family: 'circe-lightregular', sans-serif;
+	margin-bottom: 30px;
 }
 
 .avangard_engineering_technical_services .collage.first .intro P {
 	font-size: 20px;
+	padding: 0 120px;
 }
 
 .avangard_engineering_technical_services .collage.second {
 	padding:20px 0;
-}
-
-.avangard_engineering_technical_services .collage.second P {
-	margin:0 0 1.5em 0;
 }
 
 .avangard_engineering_technical_services .text,
@@ -923,6 +957,10 @@ INPUT.btn {
 .intro h3{
 	margin-bottom: 24px;
 }
+.intro p{
+	margin: 0 0 27px 0;
+	line-height: 30px;
+}
 
 .features {
 	max-width: 1180px;
@@ -943,6 +981,11 @@ INPUT.btn {
 .features .ico_cover {
 	height:150px;
 	margin:0;
+}
+
+.features h4{
+	margin-bottom: 20px;
+	margin-top: 8px;
 }
 
 .ico_cover SPAN {
@@ -1007,7 +1050,7 @@ INPUT.btn {
 }
 
 .managed_aircraft .collage.second{
-	padding: 0;
+	padding: 20px 0;
 }
 .avangard_engineering_technical_services .collage.second IMG,
 .managed_aircraft .collage.second IMG{
@@ -1171,7 +1214,6 @@ INPUT.btn {
 	max-width: 1180px;
 }
 .avangard_about .sect.second .collage_animate{
-	color: #32404c;
 	margin-bottom: 100px;
 }
 .avangard_about .sect.second .collage_animate div:first-child{
@@ -1290,6 +1332,7 @@ INPUT.btn {
 .managed_aircraft .collage.first .intro h1,
 .private_and_cahrter .collage.first .intro h1{
 	font-size: 100px;
+	margin-bottom: 30px;
 }
 .managed_aircraft .collage.first .intro p,
 .private_and_cahrter .collage.first .intro p{
