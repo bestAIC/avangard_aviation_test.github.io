@@ -15,7 +15,6 @@ IMG,FIELDSET {border:none;}
 IMG {max-width:100%; height:auto;}
 A {text-decoration:none; color:#0173c1;}
 A:hover {color:#013e83;}
-P {line-height:1.5em;letter-spacing: -0.1px}
 UL, UL LI {list-style-type:none;}
 EM {font-style:normal;}
 
@@ -116,12 +115,13 @@ body {
 	background:#fff; 
 	color:#32404c;	
 	font: 18px 'helveticaneuecyrultralight',Helvetica, Arial,sans-serif;
-	letter-spacing: 0.3px;
+	letter-spacing: 0.5px;
 	min-width:1220px;
 }
 p {
 	line-height:1.5em;
 	letter-spacing: 0.3px;
+	font-family: 'helveticaneuecyrlight', sans-serif;
 }
 h1{
 	font-family: 'circe-extralightregular', sans-serif;
@@ -145,6 +145,7 @@ h4{
 	font-family: 'circe-lightregular', sans-serif;
 	font-size: 30px;
 	line-height: 40px;
+	letter-spacing: -1px;
 }
 
 
@@ -748,6 +749,7 @@ INPUT.btn {
 	min-width: 1180px;
 	padding: 25px 20px 0;
 	overflow: hidden;
+	font-family: 'helveticaneuecyrlight', sans-serif;
 }
 #footer .footer_contact{
 	max-width: 1220px;
@@ -842,6 +844,7 @@ INPUT.btn {
 .footer_autor .copyright{
 	font-size: 16px;
 	text-align: left;
+	line-height: 28px;
 }
 .footer_autor .autor{
 	text-align: right;
@@ -850,13 +853,16 @@ INPUT.btn {
 .footer_autor .autor span{
 	line-height: 22px;
 	display: inline-block;
-	vertical-align: sub;
+	vertical-align: middle;
+	line-height: 24px;
+	margin-right: 4px;
 }
 .footer_autor .autor a{
 	color: #49545d;
 }
 .footer_autor .autor img{
-	vertical-align: top;
+	vertical-align: text-bottom;
+	/* line-height: 58px; */
 }
 
 /* avangard_index */
@@ -880,6 +886,9 @@ INPUT.btn {
 	max-width: 1180px;
 	margin: 0 auto;
 }
+.collage.first P{
+	font-family: 'helveticaneuecyrultralight', sans-serif;
+}
 .collage.first .collage_img .intro{
 	display: table-cell;
 	vertical-align: middle;
@@ -889,7 +898,7 @@ INPUT.btn {
 	background-size: cover;
 }
 .avangard_index .collage.third{
-	background: url('../pic/pic_4.jpg') top left no-repeat;	
+	background: url('../pic/pic_4.jpg') top center no-repeat;	
 	background-size: cover;
 }
 .avangard_index .collage.fourth{
@@ -934,7 +943,6 @@ INPUT.btn {
 
 .avangard_engineering_technical_services .collage.first .intro H1 {
 	font-size:100px;
-	font-family: 'circe-lightregular', sans-serif;
 	margin-bottom: 30px;
 }
 
@@ -1002,7 +1010,8 @@ INPUT.btn {
 	margin-top: 24px;
 }
 .features P {
-	padding: 0 10px;
+	letter-spacing: 0.5px;
+	font-family: 'helveticaneuecyrlight', sans-serif;
 }
 .features A {
 	color:#ffa904;
@@ -1080,6 +1089,10 @@ INPUT.btn {
 .tbl-icons .odd TD {
 	vertical-align: top;
 	padding:0 40px 10px 40px;
+}
+.tbl-icons TD P{
+	letter-spacing: 0.5px;
+	font-family: 'helveticaneuecyrlight', sans-serif;
 }
 
 .tbl-icons span {
@@ -1217,6 +1230,7 @@ INPUT.btn {
 /* avangard_about */
 .avangard_about .container_fluid{
 	background: url('../pic/pic_10.jpg') 50% 0 no-repeat;
+	background-size: cover;
 	width: 100%;
 }
 @media (min-width:1920px) {
