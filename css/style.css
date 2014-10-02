@@ -136,7 +136,7 @@ h2{
 	letter-spacing: -0.5px;
 }
 h3{
-	font-family: 'circe-lightregular', sans-serif;
+	font-family: 'circe-extralightregular', sans-serif;
 	font-size: 50px;
 	line-height: 60px;
 	letter-spacing: -0.3px;
@@ -429,7 +429,6 @@ INPUT.btn {
 	top: 0;
 	left: 0;
 	width: 100%;
-	padding: 0 20px;
 	z-index: 10;
 	min-width: 1180px;
 	border-bottom: 1px solid rgba(255,255,255, 0.1);
@@ -532,7 +531,6 @@ INPUT.btn {
 }
 .header_shadow{
 	width: 100%;
-	min-width: 1180px;
 	height: 204px;
 	position: absolute;
 	top: 0;
@@ -552,6 +550,7 @@ INPUT.btn {
 	min-width: 1180px;
 	max-width: 1280px;
 	margin: 0 auto;
+	padding: 0 20px;
 }
 .menu_top{
 	vertical-align: middle;
