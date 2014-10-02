@@ -537,6 +537,7 @@ INPUT.btn {
 	position: absolute;
 	top: 0;
 	left: 0;
+	right: 0;
 	background: -moz-linear-gradient(top,  rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.6)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.6) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
