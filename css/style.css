@@ -177,11 +177,8 @@ TEXTAREA {
 
 INPUT.btn {
 	width: auto;
-	padding: 10px 50px;
+	padding: 0 50px;
 	float:left;
-	-webkit-border-radius: 2px; 
-	-moz-border-radius: 2px; 
-	border-radius: 2px; 
 	background-color: #eeb529;
 	border: 2px solid #eeb529;
 	-webkit-box-shadow: inset 0 -24px rgba(69,67,7,.05); 
@@ -373,11 +370,17 @@ INPUT.btn {
 .btn{
 	min-width: 110px;
 	height: 50px;
-	border-radius: 4px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	border-radius: 4px; 
 	display: inline-block;
-	padding: 10px 20px;
+	text-align: center;
 	font-size: 18px;
-	font-weight: 300;
+	line-height: 46px;
+	padding: 0 20px;
+	vertical-align: middle;
+	cursor: pointer;
+	font-family: 'helveticaneuecyrlight', sans-serif;
 	transition: background-color .25s, color .25s, border-color .25s;
 }
 .btn.color_1{
@@ -412,10 +415,7 @@ INPUT.btn {
 	background: linear-gradient(to bottom,  rgba(255,181,0,1) 49%,rgba(240,171,0,1) 50%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb500', endColorstr='#f0ab00',GradientType=0 ); /* IE6-9 */
 }
-.btn.yellow span{
-	margin-top: 1px;
-	display: inline-block;
-}
+
 
 .container_fluid{
 	padding: 0;
@@ -618,23 +618,23 @@ INPUT.btn {
 .header_top .lang_wrap{
 	display: inline-block;
 	vertical-align: middle;
+	font-family: 'helveticaneuecyrlight', sans-serif;
 }
 .header_top .lang_btn{
-	width: 170px;
+	padding: 0 30px;
+	line-height: 50px;
 	vertical-align: middle;
 	text-align: center;
 	color: #3c2f00;
-	line-height: 1;
-	font-family: 'helveticaneuecyrroman', sans-serif;
-}
-.header_top .lang_btn span{
-	padding-top: 6px;
+	font-family: 'helveticaneuecyrlight', sans-serif;
 }
 .header_top .lang_dropdown{
 	min-width: 90px;
 	height: 50px;
 	border: 2px solid #fff;	
-	border-radius: 4px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	border-radius: 4px; 
 	margin-bottom: 0;
 	margin-left: 20px;
 	display: inline-block;
@@ -712,7 +712,9 @@ INPUT.btn {
 	text-align: left;
 	list-style: none;
 	float: left;
-	border-radius: 4px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	border-radius: 4px; 
 }
 .lang_dropdown.closed .lang_dropdown-menu{
 	display: none;
@@ -1053,7 +1055,7 @@ INPUT.btn {
 }
 
 .tbl-icons {
-	width: 65%;
+	width: 1180px;
 	margin: 20px auto 0;
 }
 
@@ -1388,7 +1390,9 @@ INPUT.btn {
 	padding-top: 70px;
 }
 .private_and_cahrter .btn_toogle{
-	border-radius: 4px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	border-radius: 4px; 
 	display: inline-block;
 	margin-top: 26px;
 	border: 2px solid #eeb529;
@@ -1433,7 +1437,9 @@ INPUT.btn {
 }
 .about_raice div{
 	border: 2px solid #406280;
-	border-radius: 4px;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	border-radius: 4px; 
 	padding: 19px 0 16px;
 	margin-left: 50px;
 	width: 16%;

@@ -142,7 +142,7 @@ $(function() {
 		
 		btn.on('click', function(){
 			$('body').animate({
-				scrollTop: $('section.second').offset().top
+				scrollTop: $('.js-animate_to').offset().top
 			}, 800)
 			return false;
 		});
@@ -161,7 +161,7 @@ $(function() {
 
 		function myScroll2(){
 			var topScroll = win.scrollTop(),
-				scrollPos = (topScroll + windowH) + textCnt1.height();
+				scrollPos = (topScroll + windowH) + textCnt1.height() + 500;
 			if(scrollPos > posA2){
 				textCnt1.css({opacity: 1});
 			}
@@ -170,7 +170,7 @@ $(function() {
 
 		function myScroll3(){
 			var topScroll = win.scrollTop(),
-				scrollPos = (topScroll + windowH) + textCnt2.height()*2;
+				scrollPos = (topScroll + windowH) + textCnt2.height()*2 + 500;
 
 			if(scrollPos > posA3){
 				textCnt2.css({opacity: 1});
