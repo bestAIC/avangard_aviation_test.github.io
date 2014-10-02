@@ -422,7 +422,7 @@ $(function() {
 			btnBlock = $('.btn_toogle', cont);
 
 		btnBlock.on('click', '.btn:not(.current)', function(){
-			$(this).addClass('current').siblings().removeClass('current').parents('#air_btn-toogle').find('.about_race-wrap').eq($(this).index()).fadeIn(150).siblings('.about_race-wrap').hide();
+			$(this).addClass('current').siblings().removeClass('current').parents('#air_btn-toogle').find('.about_race-wrap').eq($(this).index()).fadeIn(450).siblings('.about_race-wrap').hide();
 		});
 
 

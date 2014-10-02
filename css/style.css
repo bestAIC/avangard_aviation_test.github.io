@@ -743,11 +743,10 @@ INPUT.btn {
 	background: #1a2633;
 	min-height: 340px;
 	min-width: 1180px;
-	padding: 25px 0px 0;
+	padding: 25px 20px 0;
 	overflow: hidden;
 }
 #footer .footer_contact{
-	padding: 0 20px;
 	max-width: 1220px;
 	margin: 0 auto;
 }
@@ -831,6 +830,7 @@ INPUT.btn {
 	border-top: 1px solid rgba(255,255,255, 0.1);
 	padding: 20px 0 30px;
 	color: #49545d;
+	margin: 0 -20px;
 }
 .footer_autor .footer_autor-wrap{
 	max-width: 1180px;
@@ -839,11 +839,9 @@ INPUT.btn {
 .footer_autor .copyright{
 	font-size: 16px;
 	text-align: left;
-	padding-left: 20px;
 }
 .footer_autor .autor{
 	text-align: right;
-	padding-right: 20px;
 	font-size: 16px;
 }
 .footer_autor .autor span{
@@ -922,11 +920,6 @@ INPUT.btn {
 	background-size: cover;
 }
 
-.avangard_engineering_technical_services .tbl-icons {
-	margin-top: 20px;
-}
-
-
 .avangard_engineering_technical_services  .intro,
 .managed_aircraft .collage.second  .intro {
 	color:#fff;
@@ -999,6 +992,12 @@ INPUT.btn {
 .features.cols_2{
 	max-width: 960px;
 }
+.features .features_lnk{
+	margin-top: 24px;
+}
+.features P {
+	padding: 0 10px;
+}
 .features A {
 	color:#ffa904;
 }
@@ -1051,7 +1050,7 @@ INPUT.btn {
 
 .tbl-icons {
 	width: 65%;
-	margin: 0 auto;
+	margin: 20px auto 0;
 }
 
 .tbl-icons TD {
@@ -1353,10 +1352,12 @@ INPUT.btn {
 /* managed_aircraft */
 
 .managed_aircraft .collage.first{
-	background: url('../pic/pic_17.jpg') 50% 50% / cover no-repeat;
+	background: url('../pic/pic_17.jpg') 50% 50% no-repeat;
+	background-size: cover;
 }
 .private_and_cahrter .collage.first{
-	background: url('../pic/pic_19.jpg') 50% 50% / cover no-repeat;
+	background: url('../pic/pic_19.jpg') 50% 50% no-repeat;
+	background-size: cover;
 }
 .managed_aircraft .collage.first .intro,
 .private_and_cahrter .collage.first .intro{
@@ -1409,9 +1410,17 @@ INPUT.btn {
 }
 .about_race-wrap{
 	display: none;
+	-webkit-transform: scale(0.9);
+	transform: scaleX(0.9);
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
 }
 .about_race-wrap.visible{
 	display: block;
+	-webkit-transform: scale(0.9);
+	transform: scaleX(0.9);
+	-webkit-transition: -webkit-transform 0.2s;
+	transition: transform 0.2s;
 }
 
 .about_raice{
