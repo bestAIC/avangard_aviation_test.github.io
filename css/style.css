@@ -430,7 +430,6 @@ INPUT.btn {
 	left: 0;
 	width: 100%;
 	z-index: 10;
-	min-width: 1180px;
 	border-bottom: 1px solid rgba(255,255,255, 0.1);
 }
 
@@ -532,6 +531,9 @@ INPUT.btn {
 .header_shadow{
 	width: 100%;
 	height: 204px;
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
 	position: absolute;
 	top: 0;
 	left: 0;
