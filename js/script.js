@@ -135,7 +135,7 @@ $(function() {
 				var img1 = $('#animate_index_1'),
 					img2 = $('#animate_index_2');
 				
-				img1.addClass('active').css({position: 'absolute', top: 0});
+				img1.addClass('active').css({position: 'absolute'});
 				img2.addClass('active');
 			}
 		}

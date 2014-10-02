@@ -1188,7 +1188,7 @@ INPUT.btn {
 
 #animate_index_1{
 	width: auto;
-	top: 60px;
+	top: -150px;
 	position: relative;
 	opacity: 0;
 	transform: translateX(800px);
@@ -1378,7 +1378,7 @@ INPUT.btn {
 }
 .managed_aircraft .collage.first .intro,
 .private_and_cahrter .collage.first .intro{
-	padding: 360px 0;
+	padding: 34px 0;
 	color: #fff;
 }
 .managed_aircraft .collage.first .intro h1,
