@@ -416,6 +416,7 @@ INPUT.btn {
 	background: linear-gradient(to bottom,  rgba(255,181,0,1) 49%,rgba(240,171,0,1) 50%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb500', endColorstr='#f0ab00',GradientType=0 ); /* IE6-9 */
 }
+
 .container_fluid{
 	padding: 0;
 	min-width: 1180px;
@@ -529,7 +530,6 @@ INPUT.btn {
 	width: 100%;
 	height: 204px;
 	position: absolute;
-	z-index: 10;
 	top: 0;
 	left: 0;
 	right: 0;
@@ -1429,17 +1429,9 @@ INPUT.btn {
 }
 .about_race-wrap{
 	display: none;
-	-webkit-transform: scale(0.9);
-	transform: scaleX(0.9);
-	-webkit-transition: -webkit-transform 0.2s;
-	transition: transform 0.2s;
 }
 .about_race-wrap.visible{
 	display: block;
-	-webkit-transform: scale(0.9);
-	transform: scaleX(0.9);
-	-webkit-transition: -webkit-transform 0.2s;
-	transition: transform 0.2s;
 }
 
 .about_raice{
