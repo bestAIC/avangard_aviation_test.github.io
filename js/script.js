@@ -299,7 +299,7 @@ $(function() {
 		var map;
 		function initialize() {
   	        var mapOptions = {
-  	            center: new google.maps.LatLng(47.465744,-7.567063),
+  	            center: new google.maps.LatLng(41.608168, 21.595281),
   	            zoom: 2,
                   zoomControl: false,
                   disableDoubleClickZoom: false,
@@ -326,6 +326,12 @@ $(function() {
   						{ "visibility": "off" }
   					]
   					},{
+					    "featureType": "administrative.locality",
+					    "elementType": "labels.text.fill",
+					    "stylers": [
+					      { "color": "#ff0000" }
+					    ]
+					  },{
   						"featureType": "water",
   						"stylers": [
   						{ "color": "#ffffff" }
@@ -338,6 +344,8 @@ $(function() {
   					}
   					],
   	        }
+
+  	        map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
           var locations = [
   			['moskow', 'undefined', 'undefined', 'undefined', 'undefined', 55.755826, 37.6173, 'img/ico_7.png'],
@@ -365,12 +373,9 @@ $(function() {
               });
           }
 
-			map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
           	$('#air_map-from-styler, #air_map-to-styler').on('click', calcData);
 
         	function calcData(){
-        		flightPath.setMap(null);
 
 	    		if($(this).attr('id') == 'air_map-from-styler'){
 	    			var selFrom = $('li.selected', $(this)),
@@ -387,27 +392,30 @@ $(function() {
 		        			selToX = selTo.data('tox'),
 		        			selToY = selTo.data('toy');
 	        		}
+
+	        		var flightPlanCoordinates = [
+	        			new google.maps.LatLng(selFromX, selFromY), // from
+	        			new google.maps.LatLng(selToX, selToY) // to
+	        		];
+
+	        		flightPathOptions = ({
+	        			path: flightPlanCoordinates,
+	        			geodesic: true,
+	        			strokeColor: '#ffb500',
+	        			strokeOpacity: 1.0,
+	        			strokeWeight: 2,
+	        			icons: [{
+	        				icon: {path: google.maps.SymbolPath.FORWARD_OPEN_ARROW},
+	        				offset: '50%'
+	        			}]
+	        		});
+
+	        		flightPath = new google.maps.Polyline(flightPathOptions);
+
+	        		flightPath.setMap(map);
         	} // calcData
-
-			var flightPlanCoordinates = [
-				new google.maps.LatLng(37.772323, -122.214897),
-				new google.maps.LatLng(21.291982, -157.821856)
-			];
-
-			flightPath = new google.maps.Polyline({
-				path: flightPlanCoordinates,
-				geodesic: true,
-				strokeColor: '#ffb500',
-				strokeOpacity: 1.0,
-				strokeWeight: 2,
-				icons: [{
-					icon: {path: google.maps.SymbolPath.FORWARD_OPEN_ARROW},
-					offset: '80%'
-				}],
-				map: map
-			});
-
-			flightPath.setMap(map);
+        	flightPath.setMap(null);
+			
 		} // init
 
 		google.maps.event.addDomListener(window, 'load', initialize);
