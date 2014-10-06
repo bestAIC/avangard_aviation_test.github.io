@@ -462,8 +462,8 @@ INPUT.btn {
 	opacity: 0;
 	-webkit-transform: scale(0.9);
 	transform: scale(0.9);
-	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
-	transition: transform 0.2s, opacity 0.2s, visibility 0s 0.2s;
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.2s, visibility 0.2s;
+	transition: transform 0.2s, opacity 0.2s, visibility 0.2s;
 }
 #menu_overlay.open{
 	visibility: visible;
@@ -1504,3 +1504,112 @@ INPUT.btn {
 }
 
 /* /air_map-form */
+
+.map_city_icon {
+	color: #000;
+	margin-top: -10px;
+	margin-left: -10px;
+	position: relative;
+}
+.map_city_icon.current.start .maps_marker_icons{
+	width: 70px;
+	height: 70px;
+	position: absolute;
+	background: -moz-radial-gradient(center, ellipse cover, rgba(255,181,0,0) 0%, rgba(255,181,0,0) 17%, rgba(255,181,0,1) 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,181,0,0)), color-stop(17%,rgba(255,181,0,0)), color-stop(100%,rgba(255,181,0,1)));
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,181,0,0) 0%,rgba(255,181,0,0) 17%,rgba(255,181,0,1) 100%);
+	background: -o-radial-gradient(center, ellipse cover, rgba(255,181,0,0) 0%,rgba(255,181,0,0) 17%,rgba(255,181,0,1) 100%);
+	background: -ms-radial-gradient(center, ellipse cover, rgba(255,181,0,0) 0%,rgba(255,181,0,0) 17%,rgba(255,181,0,1) 100%);
+	background: radial-gradient(ellipse at center, rgba(255,181,0,0) 0%,rgba(255,181,0,0) 17%,rgba(255,181,0,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffb500', endColorstr='#ffb500',GradientType=1 );
+	border-radius: 35px;
+	left: -25px;
+	top: -25px;
+}
+.map_city_icon.current.start .maps_marker_icons:before{
+	content: "";
+	width: 14px;
+	height: 14px;
+	background-color: #ffb500;
+	border-radius: 7px;
+	position: absolute;
+	top: 28px;
+	left: 28px;
+}
+.maps_province_icons::first-letter{
+	text-transform: uppercase;
+}
+.map_city_icon.current.start .maps_marker_icons + .maps_province_icons,
+.map_city_icon.current.end .maps_marker_icons + .maps_province_icons{
+	margin-left: 25px;
+	z-index: 100;
+	font-family: 'circe-lightregular', sans-serif;
+	font-size: 18px;
+}
+.map_city_icon.current.end .maps_marker_icons + .maps_province_icons{
+	margin-left: 10px;
+}
+.map_city_icon.current .maps_marker_icons{
+	background-color: #ffb500;
+	border-radius: 7px;
+	background-image: none;
+}
+.maps_marker_icons {
+	background: url('../img/ico_7.png') no-repeat;
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+}
+.maps_placeholder{
+	display: none;
+	background-color: #fff;
+	color: #556a7c;
+	width: 190px;
+	border: 2px solid #556a7c;
+	border-radius: 4px;
+	padding: 15px 17px;
+	position: absolute;
+	bottom: 100%;
+	z-index: 1000;
+	left: 10px;
+	margin-bottom: 10px;
+}
+.maps_placeholder:before{
+	content: "";
+	background: url('../img/ico_9.png') no-repeat;
+	width: 16px;
+	height: 14px;
+	position: absolute;
+	top: 100%;
+	left: -2px;
+	margin-top: -2px;
+}
+.map_city_icon.current.end .maps_placeholder{
+	display: block;
+}
+#air_map-data{
+	display: none;
+}
+.maps_province_icons{
+	display: inline-block;
+	margin-left: 5px;
+	line-height: 14px;
+	vertical-align: top;
+	font-family: 'circe-lightregular', sans-serif;
+	font-size: 14px;
+}
+.maps_placeholder{
+	text-align: left;
+}
+.maps_placeholder h5{
+	font-size: 20px;
+	color: #000;
+	margin-bottom: 16px;
+	font-family: 'circe-lightregular', sans-serif;
+}
+.maps_placeholder p{
+	font-size: 16px;
+	color: #556a7c;
+}
+
+556a7c

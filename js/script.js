@@ -293,10 +293,55 @@ $(function() {
 	}
 })(jQuery);
 
+
 (function($){
 	$.fn.mapAnimate = function(){
+		var flighhArr = [];
 		var flightPath;
+		var flightPlanCoordinates = [];
 		var map;
+
+		/** @constructor */
+		function MyOverlay(map, coord, code) {
+		  this.coord_ = coord;
+		  this.code_ = code;
+		  this.map_ = map;
+		  this.div_ = null;
+		  this.setMap(map);
+		}
+
+		function initOverlays(){
+		  MyOverlay.prototype = new google.maps.OverlayView();
+
+		  MyOverlay.prototype.onAdd = function() {
+
+		    var div = document.createElement('div');
+		    div.style.borderStyle = 'none';
+		    div.style.borderWidth = '0px';
+		    div.style.position = 'absolute';
+		    div.style.display = 'inline-block';
+
+		    div.innerHTML = this.code_;
+		    this.div_ = div;
+
+		    var panes = this.getPanes();
+		    panes.floatPane.appendChild(div);
+		  };
+
+		  MyOverlay.prototype.draw = function() {
+		    var overlayProjection = this.getProjection();
+		    var pos = overlayProjection.fromLatLngToDivPixel(this.coord_);
+		    var div = this.div_;
+		    div.style.left = pos.x + 'px';
+		    div.style.top = pos.y + 'px';
+		  };
+
+		  MyOverlay.prototype.onRemove = function() {
+		    this.div_.parentNode.removeChild(this.div_);
+		    this.div_ = null;
+		  };
+		};
+
 		function initialize() {
   	        var mapOptions = {
   	            center: new google.maps.LatLng(41.608168, 21.595281),
@@ -346,14 +391,14 @@ $(function() {
   	        }
 
   	        map = new google.maps.Map(document.getElementById('map'), mapOptions);
-
+  	        initOverlays();
           var locations = [
-  			['moskow', 'undefined', 'undefined', 'undefined', 'undefined', 55.755826, 37.6173, 'img/ico_7.png'],
-  			['new-york', 'undefined', 'undefined', 'undefined', 'undefined', 40.7127837, -74.0059413, 'img/ico_7.png'],
-  			['paris', 'undefined', 'undefined', 'undefined', 'undefined', 48.856614, 2.3522219, 'img/ico_7.png'],
-  			['novosibirsk', 'undefined', 'undefined', 'undefined', 'undefined', 55.023906, 83.010197, 'img/ico_7.png'],
-  			['ulanbator', 'undefined', 'undefined', 'undefined', 'undefined', 47.891190, 106.895796, 'img/ico_7.png'],
-  			['berlin', 'undefined', 'undefined', 'undefined', 'undefined', 52.52000659999999, 13.404954, 'img/ico_7.png']
+  			['moscow', 'Transfer fligth', 'Distance: ', 'undefined', 'undefined', 55.755826, 37.6173, 'img/ico_7.png'],
+  			['new-york', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 40.7127837, -74.0059413, 'img/ico_7.png'],
+  			['paris', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 48.856614, 2.3522219, 'img/ico_7.png'],
+  			['novosibirsk', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 55.023906, 83.010197, 'img/ico_7.png'],
+  			['ulanbator', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 47.891190, 106.895796, 'img/ico_7.png'],
+  			['berlin', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 52.52000659999999, 13.404954, 'img/ico_7.png']
           ];
           for (i = 0; i < locations.length; i++) {
   			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
@@ -361,21 +406,59 @@ $(function() {
   			if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
              if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
              if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
-              marker = new google.maps.Marker({
-                  icon: markericon,
-                  position: new google.maps.LatLng(locations[i][5], locations[i][6]),
-                  map: map,
-                  title: locations[i][0],
-                  desc: description,
-                  tel: telephone,
-                  email: email,
-                  web: web
-              });
+			
+			var arr1 = locations[0][5];
+
+			marker = new MyOverlay(map,new google.maps.LatLng(locations[i][5], locations[i][6]),
+		      '<div class="map_city_icon '+ locations[i][0] +' ">'+
+		          '<div>' +
+		          '<div class="maps_marker_icons"></div>' +
+		          '<span class="maps_province_icons">'+ locations[i][0] +'</span>'+
+		          '<div class="maps_placeholder">' + description + '</div>' +
+		          '</div>'+
+		        '</div>'
+			 );
           }
+
+          $( "body" ).delegate( ".map_city_icon", "mouseenter", function() {
+              var cur = $('this').attr('data');
+
+              var depLat = $(this).find('div').attr('data-fromx');
+              var depLon = $(this).find('div').attr('data-fromy');
+              var arLat = $(this).closest('.map').find('.map_city_icon.icon_dep.dep_'+ cur +' div').attr('data-fromx');
+              var arLon = $(this).closest('.map').find('.map_city_icon.icon_dep.dep_'+ cur +' div').attr('data-fromy');
+              var deps = new google.maps.LatLng(depLat, depLon);
+              var ar =  new google.maps.LatLng(arLat, arLon);
+
+              $(this).addClass('is_hover');
+            });
+
+            $( "body" ).delegate( ".map_city_icon", "mouseleave", function() {
+              var cur = $(this).attr('data');
+              $(this).removeClass('is_hover');
+            });
 
           	$('#air_map-from-styler, #air_map-to-styler').on('click', calcData);
 
+          	function clerPath() {
+          		var len = flighhArr.length;
+          		for (var i = 0; i < len; i++ ) {
+    				flighhArr[i].setMap(null);
+  				}
+  				flighhArr = [];
+          	}
+
         	function calcData(){
+        		var selFrom = $('#air_map-from-styler li.selected').text();
+        		var selTo = $('#air_map-to-styler li.selected').text();
+        		var myHtml = $('#air_map-data').find('.' + selFrom +  '.' + selTo).html();
+
+        		$('.map_city_icon .maps_placeholder').html(myHtml);        		
+        		
+        		$('.map_city_icon').removeClass('current');
+        		$('.map_city_icon').parent().find('.'+selFrom).addClass('current start');
+        		$('.map_city_icon').parent().find('.'+selTo).addClass('current end');
+        		
 
 	    		if($(this).attr('id') == 'air_map-from-styler'){
 	    			var selFrom = $('li.selected', $(this)),
@@ -393,33 +476,44 @@ $(function() {
 		        			selToY = selTo.data('toy');
 	        		}
 
+	        		clerPath();	
 	        		var flightPlanCoordinates = [
 	        			new google.maps.LatLng(selFromX, selFromY), // from
 	        			new google.maps.LatLng(selToX, selToY) // to
 	        		];
 
+	        		var lineSymbol = {
+	        		  path: 'M 0,-1 0,1',
+	        		  strokeOpacity: 2,
+	        		  scale: 3
+	        		};
+
+	        		var plain = {
+	        		  path: 'M19.8,0l-1.9,0l-8,11.8l-6.4,0c-1.2,0-3.5,1-3.5,2.2l0,0c0,1.2,2.3,2.2,3.5,2.2l6.3,0l7.8,11.7l1.9,0l-2.5-11.8l6.8-0.5 l3.8,5.1l1.9,0l-2.8-6.7l2.9-6.7l-1.9,0l-3.9,5l-6.8-0.5L19.8,0z',
+	        		  strokeColor: '#ffb500'
+	        		};
+
 	        		flightPathOptions = ({
 	        			path: flightPlanCoordinates,
 	        			geodesic: true,
 	        			strokeColor: '#ffb500',
-	        			strokeOpacity: 1.0,
+	        			strokeOpacity: 1,
 	        			strokeWeight: 2,
 	        			icons: [{
 	        				icon: {path: google.maps.SymbolPath.FORWARD_OPEN_ARROW},
-	        				offset: '50%'
-	        			}]
+	        				offset: '80%'
+	        			}],
+	        			map: map
 	        		});
 
 	        		flightPath = new google.maps.Polyline(flightPathOptions);
+	        		flighhArr.push(flightPath);
 
-	        		flightPath.setMap(map);
         	} // calcData
-        	flightPath.setMap(null);
 			
 		} // init
 
 		google.maps.event.addDomListener(window, 'load', initialize);
-
 	}
 })(jQuery);
 
@@ -430,53 +524,38 @@ $(function() {
 	$.fn.airBtnToogle = function(){
 		var cont = $(this),
 			btnBlock = $('.btn_toogle', cont),
-			table = $('.about_raice');
-
+			table = $('.about_raice'),
+			cols = $('.num', table),
+			btnCur  = $('.btn.current', btnBlock);
 
 		// var airDate = {
 		//   "aircrafts": [
-		//     {
-		//       "range": "3 242",
-		//       "maxSpeed": 997,
-		//       "seatingCapacity": "9",
-		//       "usefulLoad": "14 000",
-		//       "takeoffDistance": "3 242"
-		//     },
-		//     {
-		//       "range": "7 321",
-		//       "maxSpeed": 231,
-		//       "seatingCapacity": 34,
-		//       "usefulLoad": "5 000",
-		//       "takeoffDistance": "9 123"
-		//     }
+		//     ["3 242","997","9","14 000","3 342"],
+		//     ["7 321",231,34,"5 000","9 123"]
 		//   ]
 		// };
 		// var airDateStr = JSON.stringify(airDate);
-		// var arr = airDate.aircrafts[1];
-		// var keys = Object.keys(arr);
-		// var col = $('.num', table);
-		// var btnCur  = $('.btn.current', btnBlock);
-
-		// col.each(function(index, el) {
-		// 	console.log(keys[0])
-		// });
-		
-		
-
-
-		// $(window).on('load', airDateCalc)
-
-		// function airDateCalc(){
-			
-
-		// 	col.text('');
-		// };
+		// var arr1 = airDate.aircrafts[0];
+		// var arr2 = airDate.aircrafts[1];
 
 		
-
 		btnBlock.on('click', '.btn:not(.current)', function(){
 			$(this).addClass('current').siblings().removeClass('current').parents('#air_btn-toogle').find('.about_race-wrap').eq($(this).index()).fadeIn(450).siblings('.about_race-wrap').hide();
+			// cols.text('');
+			// var colsArr = cols.toArray();
+
+			// if($(this).data('air') == 'Citation X'){
+			// 	cols.splice(0,5,"3 242","997","9","14 000","3 342");
+			// }
+
+			// if($(this).data('air') == 'Legacy 600'){
+			// 	for(var i = 0; i < arr2.length; i++){
+			// 		cols.text(arr2[i]);
+			// 	}
+			// }
 		});
+
+
 	}
 })(jQuery);
 

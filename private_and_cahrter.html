@@ -95,34 +95,57 @@
 					<div class="collage_pic">
 						<img src="pic/pic_20.png" alt="">
 					</div>
+					<div class="about_raice cols"> 
+						<div>
+							<p class="title">Range</p>
+							<p class="info"><span class="num">5 242</span> km</p>
+						</div>
+						<div>
+							<p class="title">Max speed</p>
+							<p class="info"><span class="num">1197</span> kmph</p>
+						</div>
+						<div>
+							<p class="title">Seating Capacity</p>
+							<p class="info"><span class="num">3</span> people</p>
+						</div>
+						<div>
+							<p class="title">Useful Load</p>
+							<p class="info"><span class="num">15 000</span> kg</p>
+						</div>
+						<div>
+							<p class="title">Takeoff Distance</p>
+							<p class="info"><span class="num">9 242</span> km</p>
+						</div>
+					</div>
 				</div>
 				<div class="about_race-wrap">
 					<div class="collage_pic">
 						<img src="pic/pic_24.png" alt="">
 					</div>
+					<div class="about_raice cols"> 
+						<div>
+							<p class="title">Range</p>
+							<p class="info"><span class="num">3 242</span> km</p>
+						</div>
+						<div>
+							<p class="title">Max speed</p>
+							<p class="info"><span class="num">997</span> kmph</p>
+						</div>
+						<div>
+							<p class="title">Seating Capacity</p>
+							<p class="info"><span class="num">9</span> people</p>
+						</div>
+						<div>
+							<p class="title">Useful Load</p>
+							<p class="info"><span class="num">14 000</span> kg</p>
+						</div>
+						<div>
+							<p class="title">Takeoff Distance</p>
+							<p class="info"><span class="num">3 242</span> km</p>
+						</div>
+					</div>
 				</div>
-				<div class="about_raice cols"> 
-					<div data-range='aaa'>
-						<p class="title">Range</p>
-						<p class="info"><span class="num">3 242</span> km</p>
-					</div>
-					<div>
-						<p class="title">Max speed</p>
-						<p class="info"><span class="num">997</span> kmph</p>
-					</div>
-					<div>
-						<p class="title">Seating Capacity</p>
-						<p class="info"><span class="num">9</span> people</p>
-					</div>
-					<div>
-						<p class="title">Useful Load</p>
-						<p class="info"><span class="num">14 000</span> kg</p>
-					</div>
-					<div>
-						<p class="title">Takeoff Distance</p>
-						<p class="info"><span class="num">3 242</span> km</p>
-					</div>
-				</div>
+				
 			</div>
 		</section>
 		<section class="collage third">
@@ -131,19 +154,43 @@
 				<form action="#">
 					<label for="air_map-form1">From</label>
 					<select name="from" id="air_map-from">
-						<option value="0" data-fromx="55.755" data-fromy="37.617">Moscow</option>
-						<option value="1" data-fromx="55.023" data-fromy="83.010">Novosibirsk</option>
-						<option value="2" data-fromx="47.891" data-fromy="106.895">Ulan Bator</option>
+						<option value="0" data-fromx="55.755" data-fromy="37.617">moscow</option>
+						<option value="1" data-fromx="40.712" data-fromy="-74.005">new-york</option>
 					</select>
 					<label for="air_map-form2">To</label>
 					<select name="to" id="air_map-to">
-						<option value="0" data-tox="52.520" data-toy="13.404">Astana</option>
-						<option value="1" data-tox="40.712" data-toy="-74.005">Ankara</option>
-						<option value="2">Paris</option>
+						<option value="0" data-tox="55.023" data-toy="83.010">novosibirsk</option>
+						<option value="1" data-tox="47.891" data-toy="106.895">ulanbator</option>
 					</select>
 				</form>
 			</div>
 			<div class="air_map" id="map"></div>
+			<ul id="air_map-data">
+				<li class="moscow novosibirsk">
+					<h5>Transfer fligth</h5>
+					<p>Distance: 7500 km</p>
+					<p>Transfers: 1</p>
+					<p>Travel time: 9:10</p>
+				</li>
+				<li class="moscow ulanbator">
+					<h5>Transfer fligth</h5>
+					<p>Distance: 1000 km</p>
+					<p>Transfers: 1</p>
+					<p>Travel time: 9:10</p>
+				</li>
+				<li class="new-york novosibirsk">
+					<h5>Transfer fligth</h5>
+					<p>Distance: 200 km</p>
+					<p>Transfers: 100</p>
+					<p>Travel time: 11:45</p>
+				</li>
+				<li class="new-york ulanbator">
+					<h5>Transfer fligth</h5>
+					<p>Distance: 55 km</p>
+					<p>Transfers: 100</p>
+					<p>Travel time: 11:45</p>
+				</li>
+			</ul>
 		</section>
 		<section class="text second bg_color_1">
 			<div class="intro">
