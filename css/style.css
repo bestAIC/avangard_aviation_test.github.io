@@ -176,8 +176,10 @@ TEXTAREA {
 	min-height: 200px;
 }
 
-INPUT.btn {
+INPUT.btn,
+BUTTON.btn {
 	width: auto;
+	outline: none;
 	padding: 0 50px;
 	float:left;
 	background-color: #eeb529;
