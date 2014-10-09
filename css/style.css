@@ -531,7 +531,6 @@ INPUT.btn {
 }
 .header_shadow{
 	width: 100%;
-	min-width: 1220px;
 	height: 204px;
 	position: absolute;
 	top: 0;
