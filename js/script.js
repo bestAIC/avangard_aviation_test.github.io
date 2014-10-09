@@ -5,10 +5,7 @@ var touchdevice = false,
 
 $(function() {
 
-	$('body').on('touchmove', function (e) {
-	    e.preventDefault();
-	});
-
+	if (!$('html').hasClass('no-touch')) touchdevice = true;
 
 	$('#menu_trigger-top').menuTop();
 
