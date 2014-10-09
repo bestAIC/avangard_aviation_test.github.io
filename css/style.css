@@ -1353,6 +1353,7 @@ BUTTON.btn {
 #animate_index_8 .collage_pic-b,
 #animate_index_8 .collage_text-b{
 	opacity: 0;
+	-webkit-overflow-scrolling: touch;
 	-webkit-transition: -webkit-transform 1s ease-in-out, opacity 1.25s ease-in-out .2s;
 	transition: transform 1s ease-in-out, opacity 1.25s ease-in-out .2s;
 	-webkit-transition-delay: 0s;
