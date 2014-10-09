@@ -343,6 +343,7 @@ INPUT.btn {
 	padding: 20px;
 	background-color: #fff;
 	transition: background-color .25s;
+	-webkit-transition: background-color .25s;
 	border-bottom: 1px solid #e5e7e9;
 }
 .jq-selectbox__dropdown li:hover{
@@ -383,6 +384,7 @@ INPUT.btn {
 	cursor: pointer;
 	font-family: 'helveticaneuecyrlight', sans-serif;
 	transition: background-color .25s, color .25s, border-color .25s;
+	-webkit-transition: background-color .25s, color .25s, border-color .25s;
 }
 .btn.color_1{
 	border: 2px solid #000;
@@ -409,6 +411,7 @@ INPUT.btn {
 	background: linear-gradient(to bottom,  rgba(238,181,41,1) 49%,rgba(229,174,39,1) 50%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeb529', endColorstr='#e5ae27',GradientType=0 ); /* IE6-9 */
 	transition: all .25s;
+	-webkit-transition: all .25s;
 }
 .btn.yellow:hover{
 	background: rgb(255,181,0); /* Old browsers */
@@ -584,6 +587,7 @@ INPUT.btn {
 	height: 2px;
 	position: absolute;
 	left: 0px;
+	-webkit-transition: none 0.5s ease 0.5s;
 	transition: none 0.5s ease 0.5s;
 	transition-property: transform, top, bottom, left, opacity;
 }
@@ -652,7 +656,6 @@ INPUT.btn {
 	background-color: transparent;
 	color: #fff;
 	-webkit-transition: background-color .25s, color .25s;
-	-o-transition: background-color .25s, color .25s;
 	transition: background-color .25s, color .25s;
 }
 .header_top .lang_lnk:hover{
@@ -1211,23 +1214,23 @@ INPUT.btn {
 	top: 60px;
 	position: relative;
 	opacity: 0;
-	transform: translateX(-800px);
 	-webkit-transform: translateX(-800px);
-	transition: transform 2s ease-out,opacity .8s ease-in-out;
+	transform: translateX(-800px);
 	-webkit-transition: -webkit-transform 2s ease-out,opacity .8s ease-in-out;
+	transition: transform 2s ease-out,opacity .8s ease-in-out;
 }
 #animate_index_2.active{
 	opacity: 1;
-	transform: translateX(-50px);
 	-webkit-transform: translateX(-50px);
+	transform: translateX(-50px);
 }
 
 #animate_index_3,
 #animate_index_4{
 	opacity: 0;
-	transition: opacity 2s;
 	-webkit-transition: opacity 2s;
 	-moz-transition: opacity 2s;
+	transition: opacity 2s;
 }
 
 
@@ -1308,33 +1311,36 @@ INPUT.btn {
 	position: absolute;
 	left: 60px;
 	top: 20px;
-	-webkit-transition: transform 1s ease-in-out 0.2s;
-	-o-transition: transform 1s ease-in-out 0.2s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.2s;
 	transition: transform 1s ease-in-out 0.2s;
 }
 #animate_index_10{
 	position: absolute;
 	right: -310px;
 	top: -80px;
-	-webkit-transition: transform 1s ease-in-out 0.2s;
-	-o-transition: transform 1s ease-in-out 0.2s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0.2s;
 	transition: transform 1s ease-in-out 0.2s;
 }
 .collage_birds.action #animate_index_9{
+	-webkit-transform: translateY(20px) scale(0.95);
 	transform: translateY(20px) scale(0.95);
 }
 .collage_birds.action #animate_index_10{
+	-webkit-transform: translateY(-20px) scale(0.95);
 	transform: translateY(-20px) scale(0.95);
 }
 
 
 #animate_index_5{
-	transform: translateX(0px) translateY(0px);
 	opacity: 0.5;
+	-webkit-transform: translateX(0px) translateY(0px);
+	transform: translateX(0px) translateY(0px);
+	-webkit-transition: -webkit-transform 1s ease-in, opacity 0.5s ease-in-out;
 	transition: transform 1s ease-in, opacity 0.5s ease-in-out;
 }
 #animate_index_5.active{
 	opacity: 1;
+	-webkit-transform: translateX(10px) translateY(30px);
 	transform: translateX(10px) translateY(30px);
 }
 
@@ -1345,18 +1351,19 @@ INPUT.btn {
 #animate_index_8 .collage_pic-b,
 #animate_index_8 .collage_text-b{
 	opacity: 0;
-	-webkit-transition: transform 1s ease-in-out, opacity 1.25s ease-in-out .2s;
-	-o-transition: transform 1s ease-in-out, opacity 1.25s ease-in-out .2s;
+	-webkit-transition: -webkit-transform 1s ease-in-out, opacity 1.25s ease-in-out .2s;
 	transition: transform 1s ease-in-out, opacity 1.25s ease-in-out .2s;
 }
 #animate_index_6 .collage_pic-b,
 #animate_index_7 .collage_text-b,
 #animate_index_8 .collage_pic-b{
+	-webkit-transform: translateX(-100px);
 	transform: translateX(-100px);
 }
 #animate_index_6 .collage_text-b,
 #animate_index_7 .collage_pic-b,
 #animate_index_8 .collage_text-b{
+	-webkit-transform: translateX(100px);
 	transform: translateX(100px);
 }
 #animate_index_6.action .collage_pic-b,
@@ -1372,6 +1379,7 @@ INPUT.btn {
 #animate_index_8.action .collage_text-b,
 #animate_index_8.static .collage_text-b{
 	opacity: 1;
+	-webkit-transform: translateX(0);
 	transform: translateX(0);
 }
 
@@ -1428,6 +1436,7 @@ INPUT.btn {
 	height: 46px;
 	vertical-align: middle;
 	box-shadow: inset 0 3px 5px rgba(0,0,0,0);
+	-webkit-transition: box-shadow .25s;
 	transition: box-shadow .25s;
 }
 .private_and_cahrter .btn_toogle .btn.current{
