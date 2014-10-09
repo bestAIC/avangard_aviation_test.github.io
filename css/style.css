@@ -531,6 +531,7 @@ INPUT.btn {
 }
 .header_shadow{
 	width: 100%;
+	min-width: 1220px;
 	height: 204px;
 	position: absolute;
 	top: 0;
@@ -1617,11 +1618,4 @@ INPUT.btn {
 	color: #556a7c;
 }
 
-
-@media (max-width:1024px) {
-	body{
-		min-width: 984px;
-		max-width: 1024px;
-	}
-}
 
