@@ -397,7 +397,9 @@ $(function() {
   			['new-york', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 40.7127837, -74.0059413, 'img/ico_7.png'],
   			['paris', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 48.856614, 2.3522219, 'img/ico_7.png'],
   			['novosibirsk', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 55.023906, 83.010197, 'img/ico_7.png'],
-  			['ulanbator', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 47.891190, 106.895796, 'img/ico_7.png'],
+  			['japan', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 36.593638, 140.171318, 'img/ico_7.png'],
+  			['ulanbator', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 47.513624, 106.948662, 'img/ico_7.png'],
+  			['carakas', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 10.547485, -66.651079, 'img/ico_7.png'],
   			['berlin', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 52.52000659999999, 13.404954, 'img/ico_7.png']
           ];
           for (i = 0; i < locations.length; i++) {
