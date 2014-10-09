@@ -1355,8 +1355,8 @@ BUTTON.btn {
 #animate_index_8 .collage_text-b{
 	position: relative;
 	opacity: 0;
-	-webkit-transition: left 1s ease-in-out, opacity 2.25s ease-in-out;
-	transition: left 1s ease-in-out, opacity 2.25s ease-in-out;
+	/*-webkit-transition: left 1s ease-in-out, opacity 2.25s ease-in-out;
+	transition: left 1s ease-in-out, opacity 2.25s ease-in-out;*/
 }
 #animate_index_6 .collage_pic-b,
 #animate_index_7 .collage_text-b,
@@ -1366,10 +1366,9 @@ BUTTON.btn {
 #animate_index_6 .collage_text-b,
 #animate_index_7 .collage_pic-b,
 #animate_index_8 .collage_text-b{
-	-webkit-transform: translateX(100px);
-	transform: translateX(100px);
+	left: 566px;
 }
-#animate_index_6.action .collage_pic-b,
+/*#animate_index_6.action .collage_pic-b,
 #animate_index_6.static .collage_pic-b,
 #animate_index_6.action .collage_text-b,
 #animate_index_6.static .collage_text-b,
@@ -1382,9 +1381,9 @@ BUTTON.btn {
 #animate_index_8.action .collage_text-b,
 #animate_index_8.static .collage_text-b{
 	opacity: 1;
-	/*-webkit-transform: translateX(0);
-	transform: translateX(0);*/
-}
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}*/
 
 
 
