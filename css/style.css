@@ -423,7 +423,6 @@ INPUT.btn {
 
 .container_fluid{
 	padding: 0;
-	min-width: 1180px;
 	overflow: hidden;
 }
 #header{
@@ -1196,15 +1195,15 @@ INPUT.btn {
 	top: -150px;
 	position: relative;
 	opacity: 0;
-	transform: translateX(800px);
 	-webkit-transform: translateX(800px);
-	transition: transform 2s ease-out,opacity .8s ease-in-out;
+	transform: translateX(800px);
 	-webkit-transition: -webkit-transform 2s ease-out,opacity .8s ease-in-out;
+	transition: transform 2s ease-out,opacity .8s ease-in-out;
 }
 #animate_index_1.active{
 	opacity: 1;
-	transform: translateX(-50px);
 	-webkit-transform: translateX(-50px);
+	transform: translateX(-50px);
 }
 #animate_index_2{
 	width: auto;
@@ -1618,4 +1617,11 @@ INPUT.btn {
 	color: #556a7c;
 }
 
-556a7c
+
+@media (max-width:1024px) {
+	body{
+		min-width: 984px;
+		max-width: 1024px;
+	}
+}
+
