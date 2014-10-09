@@ -216,6 +216,8 @@ $(function() {
 
 				if(posEl < windowH){
 					cont.addClass('static');
+					cont.find('.collage_pic-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
+					cont.find('.collage_text-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
 				} else {
 					cont.removeClass('static');
 				}
