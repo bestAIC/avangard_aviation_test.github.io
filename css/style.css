@@ -1197,12 +1197,14 @@ INPUT.btn {
 	position: relative;
 	opacity: 0;
 	transform: translateX(800px);
-	-webkit-transition: -webkit-transform 2s ease-out,opacity .8s ease-in-out;
+	-webkit-transform: translateX(800px);
 	transition: transform 2s ease-out,opacity .8s ease-in-out;
+	-webkit-transition: -webkit-transform 2s ease-out,opacity .8s ease-in-out;
 }
 #animate_index_1.active{
 	opacity: 1;
 	transform: translateX(-50px);
+	-webkit-transform: translateX(-50px);
 }
 #animate_index_2{
 	width: auto;
@@ -1210,18 +1212,22 @@ INPUT.btn {
 	position: relative;
 	opacity: 0;
 	transform: translateX(-800px);
-	-webkit-transition: -webkit-transform 2s ease-out,opacity .8s ease-in-out;
+	-webkit-transform: translateX(-800px);
 	transition: transform 2s ease-out,opacity .8s ease-in-out;
+	-webkit-transition: -webkit-transform 2s ease-out,opacity .8s ease-in-out;
 }
 #animate_index_2.active{
 	opacity: 1;
 	transform: translateX(-50px);
+	-webkit-transform: translateX(-50px);
 }
 
 #animate_index_3,
 #animate_index_4{
 	opacity: 0;
 	transition: opacity 2s;
+	-webkit-transition: opacity 2s;
+	-moz-transition: opacity 2s;
 }
 
 
