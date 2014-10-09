@@ -1335,8 +1335,8 @@ INPUT.btn {
 	opacity: 0.5;
 	-webkit-transform: translateX(0px) translateY(0px);
 	transform: translateX(0px) translateY(0px);
-	-webkit-transition: -webkit-transform 1s ease-in, opacity 0.5s ease-in-out;
-	transition: transform 1s ease-in, opacity 0.5s ease-in-out;
+	-webkit-transition: -webkit-transform 1s ease-in 0.5s, opacity 0.5s ease-in-out;
+	transition: transform 1s ease-in 0.5s, opacity 0.5s ease-in-out;
 }
 #animate_index_5.active{
 	opacity: 1;
@@ -1351,8 +1351,8 @@ INPUT.btn {
 #animate_index_8 .collage_pic-b,
 #animate_index_8 .collage_text-b{
 	opacity: 0;
-	-webkit-transition: -webkit-transform 1s ease-in-out, opacity 1.25s ease-in-out .2s;
-	transition: transform 1s ease-in-out, opacity 1.25s ease-in-out .2s;
+	-webkit-transition: -webkit-transform 1s ease-in-out 0s, opacity 1.25s ease-in-out .2s;
+	transition: transform 1s ease-in-out 0s, opacity 1.25s ease-in-out .2s;
 }
 #animate_index_6 .collage_pic-b,
 #animate_index_7 .collage_text-b,
