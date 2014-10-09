@@ -233,6 +233,7 @@ $(function() {
 
 				if(posEl < windowH + posWin + 50){
 					cont.addClass('action');
+					cont.find('.collage_text-b').css({'position': 'reltive', 'left': '0' })
 				}
 		})
 	}
