@@ -449,7 +449,7 @@ $(function() {
               $(this).removeClass('is_hover');
             });
 
-          	$('#air_map-from-styler li, #air_map-to-styler li').on('focus click', calcData);
+          	$('#air_map-from-styler, #air_map-to-styler').on('focus click', calcData);
 
           	function clerPath() {
           		var len = flighhArr.length;
@@ -462,6 +462,25 @@ $(function() {
         	function calcData(){
         		var selFrom = $('#air_map-from-styler li.selected').text();
         		var selTo = $('#air_map-to-styler li.selected').text();
+        		var selFromOpt = $('option', $('#air_map-from-styler'));
+        		var selToOpt = $('option', $('#air_map-to-styler'));
+
+        		selToOpt.each(function(){
+        			var txt = $(this).text();
+        			$(this).removeClass('selected');
+        			if(selTo == txt){
+        				$(this).addClass('selected');
+        			}
+        		})
+
+        		selFromOpt.each(function(){
+        			var txt = $(this).text();
+        			$(this).removeClass('selected');
+        			if(selFrom == txt){
+        				$(this).addClass('selected');
+        			}
+        		})
+
         		var myHtml = $('#air_map-data').find('.' + selFrom +  '.' + selTo).html();
 
         		$('.map_city_icon .maps_placeholder').html(myHtml);        		
@@ -469,23 +488,23 @@ $(function() {
         		$('.map_city_icon').removeClass('current');
         		$('.map_city_icon').parent().find('.'+selFrom).addClass('current start');
         		$('.map_city_icon').parent().find('.'+selTo).addClass('current end');
+        		
 
-	    		if($(this).parent('.jq-selectbox').attr('id') == 'air_map-from-styler'){
-	    			var selFrom = $('li.selected', $('#air_map-from-styler')),
+	    		if($(this).attr('id') == 'air_map-from-styler'){
+	    			var selFrom = $('option.selected', $(this)),
 	        			selFromX = selFrom.data('fromx'),
 	        			selFromY = selFrom.data('fromy');
-	    			var selTo = $('li.selected', $('#air_map-to-styler')),
+	    			var selTo = $('option.selected', $('#air_map-to-styler')),
 	        			selToX = selTo.data('tox'),
 	        			selToY = selTo.data('toy');
-	        		} 
-	        		// if($(this).parent('.jq-selectbox').attr('id') == 'air_map-to-styler'){
-	        		// 	var selFrom = $('li.selected', $('#air_map-from-styler')),
-		        	// 		selFromX = selFrom.data('fromx'),
-		        	// 		selFromY = selFrom.data('fromy');
-	        		// 	var selTo = $('li.selected', $('#air_map-to-styler')),
-		        	// 		selToX = selTo.data('tox'),
-		        	// 		selToY = selTo.data('toy');
-	        		// }
+	        		} else {
+	        			var selFrom = $('option.selected', $('#air_map-from-styler')),
+		        			selFromX = selFrom.data('fromx'),
+		        			selFromY = selFrom.data('fromy');
+	        			var selTo = $('option.selected', $(this)),
+		        			selToX = selTo.data('tox'),
+		        			selToY = selTo.data('toy');
+	        		}
 
 	        		clerPath();	
 	        		var flightPlanCoordinates = [
