@@ -1197,10 +1197,19 @@ BUTTON.btn {
 	top: 160px;
 }
 
+html.mobile #animate_index_1,
+html.tablet #animate_index_1{
+	position: absolute;
+	opacity: 1;
+	-webkit-transform: translateX(-50px);
+	transform: translateX(-50px);
+	-webkit-transition: -webkit-transform 0,opacity 0;
+	transition: transform 0,opacity 0;
+}
 #animate_index_1{
 	width: auto;
 	top: -150px;
-	position: relative;
+	position: absolute;
 	opacity: 0;
 	-webkit-transform: translateX(800px);
 	transform: translateX(800px);
@@ -1212,12 +1221,15 @@ BUTTON.btn {
 	-webkit-transform: translateX(-50px);
 	transform: translateX(-50px);
 }
-html.mobile #animate_index_1,
-html.tablet #animate_index_1{
-	-webkit-transform: translateX(-50px);
-	transform: translateX(-50px);
-}
 
+html.mobile #animate_index_2,
+html.tablet #animate_index_2{
+	opacity: 1;
+	-webkit-transform: translateX(-50px);
+	transform: translateX(-50px);	
+	-webkit-transition: -webkit-transform 0, opacity 0;
+	transition: transform 0, opacity 0;
+}
 #animate_index_2{
 	width: auto;
 	top: 60px;
@@ -1233,11 +1245,6 @@ html.tablet #animate_index_1{
 	-webkit-transform: translateX(-50px);
 	transform: translateX(-50px);
 }
-html.mobile #animate_index_2,
-html.tablet #animate_index_2{
-	-webkit-transform: translateX(-50px);
-	transform: translateX(-50px);	
-}
 
 #animate_index_3,
 #animate_index_4{
@@ -1249,6 +1256,7 @@ html.tablet #animate_index_2{
 html.mobile #animate_index_3,
 html.tablet #animate_index_4{
 	opacity: 1;
+	transition: opacity 0;
 }
 
 
