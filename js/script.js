@@ -1,11 +1,8 @@
-var touchdevice = false,
-	win = $(window),
+var win = $(window),
 	windowH = win.height();
 	
 
 $(function() {
-
-	if (!$('html').hasClass('no-touch')) touchdevice = true;
 
 	$('#menu_trigger-top').menuTop();
 
