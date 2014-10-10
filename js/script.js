@@ -207,8 +207,8 @@ $(function() {
 
 				if(posEl > windowH - 200){
 					cont.addClass('action');
-					cont.find('.collage_pic-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
-					cont.find('.collage_text-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
+					cont.find('.collage_pic-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
+					cont.find('.collage_text-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
 				}
 		}).on('load', function(){
 			var posEl = cont.offset().top,
@@ -217,8 +217,8 @@ $(function() {
 
 				if(posEl < windowH){
 					cont.addClass('static');
-					cont.find('.collage_pic-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
-					cont.find('.collage_text-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
+					cont.find('.collage_pic-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
+					cont.find('.collage_text-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
 				} else {
 					cont.removeClass('static');
 				}
@@ -239,8 +239,8 @@ $(function() {
 
 				if(posEl < windowH + posWin + 50){
 					cont.addClass('action');
-					cont.find('.collage_text-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
-					cont.find('.collage_pic-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
+					cont.find('.collage_text-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
+					cont.find('.collage_pic-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
 				}
 		})
 	}
@@ -259,8 +259,8 @@ $(function() {
 
 				if(posEl < windowH + posWin + 50){
 					cont.addClass('action');
-					cont.find('.collage_pic-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
-					cont.find('.collage_text-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
+					cont.find('.collage_pic-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
+					cont.find('.collage_text-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
 				}
 		})
 	}
