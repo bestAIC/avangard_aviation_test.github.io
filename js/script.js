@@ -23,15 +23,21 @@ $(function() {
 	}
 
 	if($('.avangard_about #animate_index_6').length){
-		$('.avangard_about #animate_index_6').animateImg2();
+		if($('html:not(.mobile, .tablet)')){
+			$('.avangard_about #animate_index_6').animateImg2();
+		}
 	}
 
 	if($('.avangard_about #animate_index_7').length){
-		$('.avangard_about #animate_index_7').animateImg3();
+		if($('html:not(.mobile, .tablet)')){
+			$('.avangard_about #animate_index_7').animateImg3();
+		}
 	}
 
 	if($('.avangard_about #animate_index_8').length){
-		$('.avangard_about #animate_index_8').animateImg4();
+		if($('html:not(.mobile, .tablet)')){
+			$('.avangard_about #animate_index_8').animateImg4();
+		}
 	}
 
 	if($('#engineering_technical_services_animate_2').length || $('#managed_aircraft_animate_1').length){
