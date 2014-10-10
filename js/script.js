@@ -449,7 +449,7 @@ $(function() {
               $(this).removeClass('is_hover');
             });
 
-          	$('#air_map-from-styler, #air_map-to-styler').on('click', calcData);
+          	$('#air_map-from-styler, #air_map-to-styler').on('focus click', calcData);
 
           	function clerPath() {
           		var len = flighhArr.length;
