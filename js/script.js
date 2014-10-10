@@ -449,98 +449,78 @@ $(function() {
               $(this).removeClass('is_hover');
             });
 
-          	$('#air_map-from-styler, #air_map-to-styler').on('focus click', calcData);
-
           	function clerPath() {
           		var len = flighhArr.length;
           		for (var i = 0; i < len; i++ ) {
     				flighhArr[i].setMap(null);
   				}
   				flighhArr = [];
-          	}
+          	} // функция сброса путей
 
         	function calcData(){
-        		var selFrom = $('#air_map-from-styler li.selected').text();
-        		var selTo = $('#air_map-to-styler li.selected').text();
-        		var selFromOpt = $('option', $('#air_map-from-styler'));
-        		var selToOpt = $('option', $('#air_map-to-styler'));
+        		var liSelect = $(this);
+        		var GoFrom = $('#air_map-from-styler');
+        		var GoTo = $('#air_map-to-styler');
+        		var selFromOpt = $('option', GoFrom);
+        		var selToOpt = $('option', GoTo);
 
-        		selToOpt.each(function(){
+        		function optionAddClass(){
         			var txt = $(this).text();
         			$(this).removeClass('selected');
-        			if(selTo == txt){
+        			if(liSelect.text() == txt){
         				$(this).addClass('selected');
         			}
-        		})
+        		} // функция присваивания класса selected к option
 
-        		selFromOpt.each(function(){
-        			var txt = $(this).text();
-        			$(this).removeClass('selected');
-        			if(selFrom == txt){
-        				$(this).addClass('selected');
-        			}
-        		})
+        		selToOpt.each(optionAddClass);
+        		selFromOpt.each(optionAddClass);
 
-        		var myHtml = $('#air_map-data').find('.' + selFrom +  '.' + selTo).html();
+      			if($(liSelect, GoFrom)){
+      				var selFromX = liSelect.data('fromx'),
+      					selFromY = liSelect.data('fromy'),
+      					selToX = $('li.selected', GoTo).data('tox'),
+      					selToY = $('li.selected', GoTo).data('toy');
+      			} else if ($(liSelect, GoTo)){
+      				var selToX = liSelect.data('tox'),
+      					selToY = liSelect.data('toy'),
+      					selFromX = $('li.selected', GoFrom).data('fromx'),
+      					selFromY = $('li.selected', GoFrom).data('fromy');
+      			}
 
-        		$('.map_city_icon .maps_placeholder').html(myHtml);        		
-        		
-        		$('.map_city_icon').removeClass('current');
-        		$('.map_city_icon').parent().find('.'+selFrom).addClass('current start');
-        		$('.map_city_icon').parent().find('.'+selTo).addClass('current end');
+      			clerPath();	// удаляем старые координаты
 
-        		clerPath();	// удаляем старые координаты
-        		
+      			console.log('selFromX: ' + selFromX + ', ' + 'selFromY: ' + selFromY + '; selToX: ' + selToX + ', ' + 'selToY: ' + selToY)
 
-	    		if($(this).attr('id') == 'air_map-from-styler'){
-	    			var selFrom = $('option.selected', $(this)),
-	        			selFromX = selFrom.data('fromx'),
-	        			selFromY = selFrom.data('fromy');
-	    			var selTo = $('option.selected', $('#air_map-to-styler')),
-	        			selToX = selTo.data('tox'),
-	        			selToY = selTo.data('toy');
-	        		} else {
-	        			var selFrom = $('option.selected', $('#air_map-from-styler')),
-		        			selFromX = selFrom.data('fromx'),
-		        			selFromY = selFrom.data('fromy');
-	        			var selTo = $('option.selected', $(this)),
-		        			selToX = selTo.data('tox'),
-		        			selToY = selTo.data('toy');
-	        		}
+        		var flightPlanCoordinates = [
+        			new google.maps.LatLng(selFromX, selFromY), // from
+        			new google.maps.LatLng(selToX, selToY) // to
+        		];
 
-	        		var flightPlanCoordinates = [
-	        			new google.maps.LatLng(selFromX, selFromY), // from
-	        			new google.maps.LatLng(selToX, selToY) // to
-	        		];
+        		var lineSymbol = {
+        		  path: 'M 0,-1 0,1',
+        		  strokeOpacity: 2,
+        		  scale: 3
+        		};
 
-	        		var lineSymbol = {
-	        		  path: 'M 0,-1 0,1',
-	        		  strokeOpacity: 2,
-	        		  scale: 3
-	        		};
+        		flightPathOptions = ({
+        			path: flightPlanCoordinates,
+        			geodesic: true,
+        			strokeColor: '#ffb500',
+        			strokeOpacity: 1,
+        			strokeWeight: 2,
+        			icons: [{
+        				icon: {path: google.maps.SymbolPath.FORWARD_OPEN_ARROW},
+        				offset: '80%'
+        			}],
+        			map: map
+        		});
 
-	        		var plain = {
-	        		  path: 'M19.8,0l-1.9,0l-8,11.8l-6.4,0c-1.2,0-3.5,1-3.5,2.2l0,0c0,1.2,2.3,2.2,3.5,2.2l6.3,0l7.8,11.7l1.9,0l-2.5-11.8l6.8-0.5 l3.8,5.1l1.9,0l-2.8-6.7l2.9-6.7l-1.9,0l-3.9,5l-6.8-0.5L19.8,0z',
-	        		  strokeColor: '#ffb500'
-	        		};
-
-	        		flightPathOptions = ({
-	        			path: flightPlanCoordinates,
-	        			geodesic: true,
-	        			strokeColor: '#ffb500',
-	        			strokeOpacity: 1,
-	        			strokeWeight: 2,
-	        			icons: [{
-	        				icon: {path: google.maps.SymbolPath.FORWARD_OPEN_ARROW},
-	        				offset: '80%'
-	        			}],
-	        			map: map
-	        		});
-
-	        		flightPath = new google.maps.Polyline(flightPathOptions);
-	        		flighhArr.push(flightPath);
+        		flightPath = new google.maps.Polyline(flightPathOptions);
+        		flighhArr.push(flightPath);
 
         	} // calcData
+
+        	$('#air_map-from-styler li, #air_map-to-styler li').on('focus click', calcData);
 			
 		} // init
 
