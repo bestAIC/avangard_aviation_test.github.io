@@ -12,7 +12,9 @@ $(function() {
 	}
 	
 	if($('#animate_index_3').length || $('#animate_index_4').length){
-		$('#animate_index_3, #animate_index_4').animateImg1();
+		if($('html.mobile, html.tablet').length === 0){
+			$('#animate_index_3, #animate_index_4').animateImg1();
+		}
 	}
 
 	if($('.avangard_about #animate_index_5').length){

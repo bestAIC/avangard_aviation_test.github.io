@@ -1246,17 +1246,17 @@ html.tablet #animate_index_2{
 	transform: translateX(-50px);
 }
 
+html.mobile #animate_index_3,
+html.tablet #animate_index_4{
+	opacity: 1;
+	transition: opacity 0;
+}
 #animate_index_3,
 #animate_index_4{
 	opacity: 0;
 	-webkit-transition: opacity 2s;
 	-moz-transition: opacity 2s;
 	transition: opacity 2s;
-}
-html.mobile #animate_index_3,
-html.tablet #animate_index_4{
-	opacity: 1;
-	transition: opacity 0;
 }
 
 
