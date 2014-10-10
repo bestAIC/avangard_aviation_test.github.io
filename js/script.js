@@ -20,19 +20,19 @@ $(function() {
 	}
 
 	if($('.avangard_about #animate_index_6').length){
-		if($('html:not(.mobile, .tablet)')){
+		if($('html.mobile, html.tablet').length === 0){
 			$('.avangard_about #animate_index_6').animateImg2();
 		}
 	}
 
 	if($('.avangard_about #animate_index_7').length){
-		if($('html:not(.mobile, .tablet)')){
+		if($('html.mobile, html.tablet').length === 0){
 			$('.avangard_about #animate_index_7').animateImg3();
 		}
 	}
 
 	if($('.avangard_about #animate_index_8').length){
-		if($('html:not(.mobile, .tablet)')){
+		if(!$('html.mobile, html.tablet').length === 0){
 			$('.avangard_about #animate_index_8').animateImg4();
 		}
 	}
