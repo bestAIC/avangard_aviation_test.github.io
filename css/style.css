@@ -1212,6 +1212,12 @@ BUTTON.btn {
 	-webkit-transform: translateX(-50px);
 	transform: translateX(-50px);
 }
+html.mobile #animate_index_1,
+html.tablet #animate_index_1{
+	-webkit-transform: translateX(-50px);
+	transform: translateX(-50px);
+}
+
 #animate_index_2{
 	width: auto;
 	top: 60px;
@@ -1227,6 +1233,11 @@ BUTTON.btn {
 	-webkit-transform: translateX(-50px);
 	transform: translateX(-50px);
 }
+html.mobile #animate_index_2,
+html.tablet #animate_index_2{
+	-webkit-transform: translateX(-50px);
+	transform: translateX(-50px);	
+}
 
 #animate_index_3,
 #animate_index_4{
@@ -1235,7 +1246,10 @@ BUTTON.btn {
 	-moz-transition: opacity 2s;
 	transition: opacity 2s;
 }
-
+html.mobile #animate_index_3,
+html.tablet #animate_index_4{
+	opacity: 1;
+}
 
 
 
