@@ -460,6 +460,9 @@ $(function() {
           	}
 
         	function calcData(){
+        		$('.air_map-block option').on('click', function(){
+        			$('#air_map-from-styler, #air_map-to-styler').click();
+        		});
         		var selFrom = $('#air_map-from-styler li.selected').text();
         		var selTo = $('#air_map-to-styler li.selected').text();
         		var myHtml = $('#air_map-data').find('.' + selFrom +  '.' + selTo).html();
