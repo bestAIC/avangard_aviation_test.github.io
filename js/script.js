@@ -32,7 +32,7 @@ $(function() {
 	}
 
 	if($('.avangard_about #animate_index_8').length){
-		if(!$('html.mobile, html.tablet').length === 0){
+		if($('html.mobile, html.tablet').length === 0){
 			$('.avangard_about #animate_index_8').animateImg4();
 		}
 	}
