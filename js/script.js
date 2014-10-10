@@ -199,15 +199,16 @@ $(function() {
 		var cont = $(this),
 			win = $(window);
 
-		win.on('scroll', function(){
+		win.on('scroll', function(e){
+			e.preventDefault();
 			var posEl = cont.offset().top,
 				posWin = win.scrollTop(),
 				heightW = win.height;
 
 				if(posEl > windowH - 200){
 					cont.addClass('action');
-					cont.find('.collage_pic-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
-					cont.find('.collage_text-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
+					cont.find('.collage_pic-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
+					cont.find('.collage_text-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
 				}
 		}).on('load', function(){
 			var posEl = cont.offset().top,
@@ -216,8 +217,8 @@ $(function() {
 
 				if(posEl < windowH){
 					cont.addClass('static');
-					cont.find('.collage_pic-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
-					cont.find('.collage_text-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
+					cont.find('.collage_pic-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
+					cont.find('.collage_text-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
 				} else {
 					cont.removeClass('static');
 				}
@@ -230,15 +231,16 @@ $(function() {
 		var cont = $(this),
 			win = $(window);
 
-		win.on('scroll', function(){
+		win.on('scroll', function(e){
+			e.preventDefault();
 			var posEl = cont.offset().top,
 				posWin = win.scrollTop(),
 				heightW = win.height;
 
 				if(posEl < windowH + posWin + 50){
 					cont.addClass('action');
-					cont.find('.collage_text-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
-					cont.find('.collage_pic-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
+					cont.find('.collage_text-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
+					cont.find('.collage_pic-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
 				}
 		})
 	}
@@ -249,15 +251,16 @@ $(function() {
 		var cont = $(this),
 			win = $(window);
 
-		win.on('scroll', function(){
+		win.on('scroll', function(e){
+			e.preventDefault();
 			var posEl = cont.offset().top,
 				posWin = win.scrollTop(),
 				heightW = win.height;
 
 				if(posEl < windowH + posWin + 50){
 					cont.addClass('action');
-					cont.find('.collage_pic-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
-					cont.find('.collage_text-b').animate({'position': 'reltive', 'left': '0', 'opacity': '1' }, 1000);
+					cont.find('.collage_pic-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
+					cont.find('.collage_text-b').css({'position': 'reltive', 'left': '0', 'opacity': '1' });
 				}
 		})
 	}
