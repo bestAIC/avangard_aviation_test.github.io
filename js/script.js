@@ -488,6 +488,8 @@ $(function() {
         		$('.map_city_icon').removeClass('current');
         		$('.map_city_icon').parent().find('.'+selFrom).addClass('current start');
         		$('.map_city_icon').parent().find('.'+selTo).addClass('current end');
+
+        		clerPath();	// удаляем старые координаты
         		
 
 	    		if($(this).attr('id') == 'air_map-from-styler'){
@@ -506,7 +508,6 @@ $(function() {
 		        			selToY = selTo.data('toy');
 	        		}
 
-	        		clerPath();	
 	        		var flightPlanCoordinates = [
 	        			new google.maps.LatLng(selFromX, selFromY), // from
 	        			new google.maps.LatLng(selToX, selToY) // to
