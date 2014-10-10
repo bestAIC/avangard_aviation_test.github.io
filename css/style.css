@@ -1247,6 +1247,8 @@ html.tablet #animate_index_2{
 }
 
 html.mobile #animate_index_3,
+html.tablet #animate_index_3,
+html.mobile #animate_index_4,
 html.tablet #animate_index_4{
 	opacity: 1;
 	transition: opacity 0;
