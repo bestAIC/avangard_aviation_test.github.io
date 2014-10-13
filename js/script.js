@@ -469,6 +469,11 @@ $(function() {
   				flighhArr = [];
           	} // функция сброса путей
 
+
+          	$('#air_map-from option').click(function(){
+      			alert(111);
+      		});
+
         	function calcData(){
         		var liSelect = $(this);
         		var GoFrom = $('#air_map-from-styler');
@@ -486,10 +491,6 @@ $(function() {
         		// selToOpt.each(optionAddClass);
         		// selFromOpt.each(optionAddClass);
         		// функция присвоения класса selected к option
-
-        	$('#air_map-from option').click(function(){
-        			alert(111);
-        		})
       			
   				var selToX = $('li.selected', GoTo).data('tox'),
   					selToY = $('li.selected', GoTo).data('toy'),
