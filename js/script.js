@@ -2,17 +2,18 @@ var win = $(window),
 	windowH = win.height();
 
 
-	  if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i) && window.innerHeight != document.documentElement.clientHeight) {
+	  
 	  var fixViewportHeight = function() {
-	    if (document.body.scrollTop !== 0) {
+	  	document.documentElement.style.height = window.innerHeight + "px";
+	    if ($('body').scrollTop() !== 0) {
 	      window.scrollTo(0, 0);
 	    }
 	  }.bind(this);
 
-	  window.addEventListener("scroll", fixViewportHeight, false);
+	  // window.addEventListener("scroll", fixViewportHeight, false);
 	  window.addEventListener("orientationchange", fixViewportHeight, false);
 	  fixViewportHeight();
-	}	
+		
 
 $(function() {
 
@@ -144,7 +145,7 @@ $(function() {
 
 		contFirst.css({
 			position: 'relative',
-			height: windowH
+			height: window.innerHeight + 'px'
 		})
 		
 		win.on('scroll', myScroll1);
@@ -538,7 +539,7 @@ $(function() {
         		});
 
 
-
+        		animateCircle()
         		flighhArr.push(flightPathOptions);
 
         	} // calcData
@@ -547,16 +548,16 @@ $(function() {
 			
 		} // init
 
-		// function animateCircle() {
-		//     var count = 0;
-		//     offsetId = window.setInterval(function() {
-		//       count = (count + 1) % 200;
+		function animateCircle() {
+		    var count = 0;
+		    offsetId = window.setInterval(function() {
+		      count = (count + 1) % 200;
 
-		//       var icons = flightPathOptions.get('icons');
-		//       icons[0].offset = (count / 2) + '%';
-		//       flightPathOptions.set('icons', icons);
-		//   }, 20);
-		// }
+		      var icons = flightPathOptions.get('icons');
+		      icons[0].offset = (count / 2) + '%';
+		      flightPathOptions.set('icons', icons);
+		  }, 20);
+		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
