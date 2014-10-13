@@ -465,12 +465,7 @@ $(function() {
 
         		function optionAddClass(){
         			var txt = $(this).text();
-        			if(liSelect.text() == txt && liSelect.parent(optFromX)){
-        				selFromOpt.removeClass('selected');
-        				$(this).addClass('selected');
-        			}
-        			if(liSelect.text() == txt && liSelect.parent(optToX)){
-        				// selToOpt.removeClass('selected');
+        			if(liSelect.text() == txt){
         				$(this).addClass('selected');
         			}
         		} 
@@ -479,31 +474,29 @@ $(function() {
         		selToOpt.each(optionAddClass);
         		selFromOpt.each(optionAddClass);
       			
-      			// if ($(liSelect, GoTo)){
-      			// 	var selToX = liSelect.data('tox'),
-      			// 		selToY = liSelect.data('toy'),
-      			// 		selFromX = $('li.selected', GoFrom).data('fromx'),
-      			// 		selFromY = $('li.selected', GoFrom).data('fromy'),
-      			// 		fromCurTxt = $('.jq-selectbox__select-text', GoFrom).data({'fromx': +selFromX, 'fromy': +selFromY});
-      			// }
-      			// if($(liSelect, GoFrom)){
-      			// 		selToX = $('li.selected', GoTo).data('tox'),
-      			// 		selToY = $('li.selected', GoTo).data('toy');
-      			// 		toCurTxt = $('.jq-selectbox__select-text', GoTo).data({'tox': +selToX, 'toy': +selToY});
-      			// }
+      			if ($(liSelect, GoTo)){
+      				var selToX = liSelect.data('tox'),
+      					selToY = liSelect.data('toy'),
+      					selFromX = $('li.selected', GoFrom).data('fromx'),
+      					selFromY = $('li.selected', GoFrom).data('fromy'),
+      					fromCurTxt = $('.jq-selectbox__select-text', GoFrom).data({'fromx': +selFromX, 'fromy': +selFromY});
+      			}
+      			if($(liSelect, GoFrom)){
+  					var selToX = $('li.selected', GoTo).data('tox'),
+  						selToY = $('li.selected', GoTo).data('toy');
+  						toCurTxt = $('.jq-selectbox__select-text', GoTo).data({'tox': +selToX, 'toy': +selToY});
+      			}
 
-      				var optFromX = $('option.selected', GoFrom).data('fromx');
-      				var optFromY = $('option.selected', GoFrom).data('fromy');
-      				var optToX = $('option.selected', GoTo).data('tox');
-      				var optToY = $('option.selected', GoTo).data('toy');
-
-      			console.log(optToX);
+  				// var optFromX = $('option.selected', GoFrom).data('fromx');
+  				// var optFromY = $('option.selected', GoFrom).data('fromy');
+  				// var optToX = $('option.selected', GoTo).data('tox');
+  				// var optToY = $('option.selected', GoTo).data('toy');
 
       			clerPath();	// удаляем старые координаты
 
         		var flightPlanCoordinates = [
-        			new google.maps.LatLng(optFromX, optFromY), // from
-        			new google.maps.LatLng(optToX, optToY) // to
+        			new google.maps.LatLng(selFromX, selFromY), // from
+        			new google.maps.LatLng(selToX, selToY) // to
         		];
 
         		var lineSymbol = {
