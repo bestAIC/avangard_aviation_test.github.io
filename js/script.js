@@ -476,7 +476,7 @@ $(function() {
 				if((selToX && selToY !== 'undefined') && (selFromX && selFromY !== 'undefined')){
 					var selFromText = $('li.selected', GoFrom).text();
 					var selToText = $('li.selected', GoTo).text();
-					var myHtml = $('#air_map-data').find('.' + selFromText.toLowerCase() + '.' + selToText.toLowerCase());
+					var myHtml = $('#air_map-data').find('.' + selFromText.toLowerCase() + '.' + selToText.toLowerCase()).children();
 
 					$('.map_city_icon .maps_placeholder').html(myHtml);
 					$('.map_city_icon').removeClass('current');
