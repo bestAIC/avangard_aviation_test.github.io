@@ -526,6 +526,7 @@ $(function() {
 	        			map: map
 	        		});
 
+	        		animateCircle();
 	        		flighhArr.push(flightPathOptions);
 	        	}
 
@@ -535,16 +536,16 @@ $(function() {
 			
 		} // init
 
-		// function animateCircle() {
-		//     var count = 0;
-		//     offsetId = window.setInterval(function() {
-		//       count = (count + 1) % 200;
+		function animateCircle() {
+		    var count = 0;
+		    offsetId = window.setInterval(function() {
+		      count = (count + 1) % 200;
 
-		//       var icons = flightPathOptions.get('icons');
-		//       icons[0].offset = (count / 2) + '%';
-		//       flightPathOptions.set('icons', icons);
-		//   }, 20);
-		// }
+		      var icons = flightPathOptions.get('icons');
+		      icons[0].offset = (count / 2) + '%';
+		      flightPathOptions.set('icons', icons);
+		  }, 20);
+		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
