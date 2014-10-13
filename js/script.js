@@ -423,56 +423,38 @@ $(function() {
   					]
   					}
   					],
-  	        }
+  	        } // mapOptions
 
   	        map = new google.maps.Map(document.getElementById('map'), mapOptions);
   	        initOverlays();
-          var locations = [
-  			['moscow', 'Transfer fligth', 'Distance: ', 'undefined', 'undefined', 55.755826, 37.6173, 'img/ico_7.png'],
-  			['new-york', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 40.7127837, -74.0059413, 'img/ico_7.png'],
-  			['paris', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 48.856614, 2.3522219, 'img/ico_7.png'],
-  			['novosibirsk', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 55.023906, 83.010197, 'img/ico_7.png'],
-  			['japan', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 36.593638, 140.171318, 'img/ico_7.png'],
-  			['carakas', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 10.547485, -66.651079, 'img/ico_7.png'],
-  			['berlin', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 52.520473, 13.341656, 'img/ico_7.png']
-          ];
-          for (i = 0; i < locations.length; i++) {
-  			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
-  			if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
-  			if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
-             if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
-             if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
-			
-			var arr1 = locations[0][5];
+			var locations = [
+				['moscow', 'Transfer fligth', 'Distance: ', 'undefined', 'undefined', 55.755826, 37.6173, 'img/ico_7.png'],
+				['new-york', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 40.7127837, -74.0059413, 'img/ico_7.png'],
+				['paris', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 48.856614, 2.3522219, 'img/ico_7.png'],
+				['novosibirsk', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 55.023906, 83.010197, 'img/ico_7.png'],
+				['japan', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 36.593638, 140.171318, 'img/ico_7.png'],
+				['carakas', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 10.547485, -66.651079, 'img/ico_7.png'],
+				['berlin', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 52.520473, 13.341656, 'img/ico_7.png']
+			];
+			for (i = 0; i < locations.length; i++) {
+				if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
+				if (locations[i][2] =='undefined'){ telephone ='';} else { telephone = locations[i][2];}
+				if (locations[i][3] =='undefined'){ email ='';} else { email = locations[i][3];}
+				if (locations[i][4] =='undefined'){ web ='';} else { web = locations[i][4];}
+				if (locations[i][7] =='undefined'){ markericon ='';} else { markericon = locations[i][7];}
+				
+				var arr1 = locations[0][5];
 
-			marker = new MyOverlay(map,new google.maps.LatLng(locations[i][5], locations[i][6]),
-		      '<div class="map_city_icon '+ locations[i][0] +' ">'+
-		          '<div>' +
-		          '<div class="maps_marker_icons"></div>' +
-		          '<span class="maps_province_icons">'+ locations[i][0] +'</span>'+
-		          '<div class="maps_placeholder">' + description + '</div>' +
-		          '</div>'+
-		        '</div>'
-			 );
-          }
-
-          $( "body" ).delegate( ".map_city_icon", "mouseenter", function() {
-              var cur = $('this').attr('data');
-
-              var depLat = $(this).find('div').attr('data-fromx');
-              var depLon = $(this).find('div').attr('data-fromy');
-              var arLat = $(this).closest('.map').find('.map_city_icon.icon_dep.dep_'+ cur +' div').attr('data-fromx');
-              var arLon = $(this).closest('.map').find('.map_city_icon.icon_dep.dep_'+ cur +' div').attr('data-fromy');
-              var deps = new google.maps.LatLng(depLat, depLon);
-              var ar =  new google.maps.LatLng(arLat, arLon);
-
-              $(this).addClass('is_hover');
-            });
-
-            $( "body" ).delegate( ".map_city_icon", "mouseleave", function() {
-              var cur = $(this).attr('data');
-              $(this).removeClass('is_hover');
-            });
+				marker = new MyOverlay(map,new google.maps.LatLng(locations[i][5], locations[i][6]),
+					'<div class="map_city_icon '+ locations[i][0] +' ">'+
+					'<div>' +
+					'<div class="maps_marker_icons"></div>' +
+					'<span class="maps_province_icons">'+ locations[i][0] +'</span>'+
+					'<div class="maps_placeholder">' + description + '</div>' +
+					'</div>'+
+					'</div>'
+					);
+          	} // for
 
           	function clerPath() {
           		var len = flighhArr.length;
@@ -482,11 +464,6 @@ $(function() {
   				flighhArr = [];
           	} // функция сброса путей
 
-
-        //   	$('#air_map-from').change(function(){
-      		// 	$('.air_map-block h2').text('click na option');
-      		// });
-
         	function calcData(){
         		var GoFrom = $('#air_map-from-styler');
         		var GoTo = $('#air_map-to-styler');
@@ -495,11 +472,17 @@ $(function() {
   					selToY = $('li.selected', GoTo).data('toy'),
   					selFromX = $('li.selected', GoFrom).data('fromx'),
   					selFromY = $('li.selected', GoFrom).data('fromy');
-				
-				console.log('selToX: ' + selToX + ' selToY: ' + selToY + ' selFromX: ' + selFromX + ' selFromY: ' + selFromY)
 
 				if((selToX && selToY !== 'undefined') && (selFromX && selFromY !== 'undefined')){
-					console.log(111)
+					var selFromText = $('li.selected', GoFrom).text();
+					var selToText = $('li.selected', GoTo).text();
+					var myHtml = $('#air_map-data').find('.' + selFromText.toLowerCase() + '.' + selToText.toLowerCase());
+
+					$('.map_city_icon .maps_placeholder').html(myHtml);
+					$('.map_city_icon').removeClass('current');
+					$('.map_city_icon').parent().find('.'+selFromText.toLowerCase()).addClass('current start');
+					$('.map_city_icon').parent().find('.'+selToText.toLowerCase()).addClass('current end');
+
 	        		var flightPlanCoordinates = [
 	        			new google.maps.LatLng(selFromX, selFromY), // from
 	        			new google.maps.LatLng(selToX, selToY) // to
