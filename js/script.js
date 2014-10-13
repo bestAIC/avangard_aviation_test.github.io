@@ -476,36 +476,25 @@ $(function() {
         		var selFromOpt = $('option', GoFrom);
         		var selToOpt = $('option', GoTo);
 
-        		function optionAddClass(){
-        			var txt = $(this).text();
-        			$(this).removeClass('selected');
-        			if(liSelect.text() == txt){
-        				$(this).addClass('selected');
-        			}
-        		} 
+        		// function optionAddClass(){
+        		// 	var txt = $(this).text();
+        		// 	$(this).removeClass('selected');
+        		// 	if(liSelect.text() == txt){
+        		// 		$(this).addClass('selected');
+        		// 	}
+        		// } 
+        		// selToOpt.each(optionAddClass);
+        		// selFromOpt.each(optionAddClass);
         		// функция присвоения класса selected к option
 
-        		selToOpt.each(optionAddClass);
-        		selFromOpt.each(optionAddClass);
+        		selFromOpt.click(function(){
+        			alert(111)
+        		})
       			
-      			// if ($(liSelect, GoTo).hasClass('selected')){
-      				var selToX = $('li.selected', GoTo).data('tox'),
-      					selToY = $('li.selected', GoTo).data('toy'),
-      					selFromX = $('li.selected', GoFrom).data('fromx'),
-      					selFromY = $('li.selected', GoFrom).data('fromy');
-      			// }
-      	// 		if($(liSelect, GoFrom).hasClass('selected')){
-  					// var selToX = $('li.selected', GoTo).data('tox'),
-  					// 	selToY = $('li.selected', GoTo).data('toy');
-      	// 		}
-
-      			$('.jq-selectbox__select-text', GoFrom).data({'fromx': +selFromX, 'fromy': +selFromY});
-      			$('.jq-selectbox__select-text', GoTo).data({'tox': +selToX, 'toy': +selToY});
-
-  				// var optFromX = $('option.selected', GoFrom).data('fromx');
-  				// var optFromY = $('option.selected', GoFrom).data('fromy');
-  				// var optToX = $('option.selected', GoTo).data('tox');
-  				// var optToY = $('option.selected', GoTo).data('toy');
+  				var selToX = $('li.selected', GoTo).data('tox'),
+  					selToY = $('li.selected', GoTo).data('toy'),
+  					selFromX = $('li.selected', GoFrom).data('fromx'),
+  					selFromY = $('li.selected', GoFrom).data('fromy');
 
       			clerPath();	// удаляем старые координаты
 
