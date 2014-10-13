@@ -407,9 +407,8 @@ $(function() {
   			['paris', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 48.856614, 2.3522219, 'img/ico_7.png'],
   			['novosibirsk', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 55.023906, 83.010197, 'img/ico_7.png'],
   			['japan', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 36.593638, 140.171318, 'img/ico_7.png'],
-  			['ulanbator', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 47.513624, 106.948662, 'img/ico_7.png'],
   			['carakas', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 10.547485, -66.651079, 'img/ico_7.png'],
-  			['berlin', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 52.52000659999999, 13.404954, 'img/ico_7.png']
+  			['berlin', 'Transfer fligth', 'undefined', 'undefined', 'undefined', 52.520473, 13.341656, 'img/ico_7.png']
           ];
           for (i = 0; i < locations.length; i++) {
   			if (locations[i][1] =='undefined'){ description ='';} else { description = locations[i][1];}
@@ -475,16 +474,16 @@ $(function() {
         		selToOpt.each(optionAddClass);
         		selFromOpt.each(optionAddClass);
 
-      			if($(liSelect, GoFrom)){
-      				var selFromX = liSelect.data('fromx'),
-      					selFromY = liSelect.data('fromy'),
-      					selToX = $('li.selected', GoTo).data('tox'),
-      					selToY = $('li.selected', GoTo).data('toy');
-      			} else if ($(liSelect, GoTo)){
+      			
+      			if ($(liSelect, GoTo)){
       				var selToX = liSelect.data('tox'),
       					selToY = liSelect.data('toy'),
       					selFromX = $('li.selected', GoFrom).data('fromx'),
       					selFromY = $('li.selected', GoFrom).data('fromy');
+      			}
+      			if($(liSelect, GoFrom)){
+      					selToX = $('li.selected', GoTo).data('tox'),
+      					selToY = $('li.selected', GoTo).data('toy');
       			}
 
       			clerPath();	// удаляем старые координаты
@@ -502,7 +501,7 @@ $(function() {
         		  scale: 3
         		};
 
-        		flightPathOptions = ({
+        		flightPathOptions = new google.maps.Polyline({
         			path: flightPlanCoordinates,
         			geodesic: true,
         			strokeColor: '#ffb500',
@@ -515,14 +514,25 @@ $(function() {
         			map: map
         		});
 
-        		flightPath = new google.maps.Polyline(flightPathOptions);
-        		flighhArr.push(flightPath);
+        		animateCircle();
+        		flighhArr.push(flightPathOptions);
 
         	} // calcData
 
         	$('#air_map-from-styler li, #air_map-to-styler li').on('focus click', calcData);
 			
 		} // init
+
+		function animateCircle() {
+		    var count = 0;
+		    offsetId = window.setInterval(function() {
+		      count = (count + 1) % 200;
+
+		      var icons = flightPathOptions.get('icons');
+		      icons[0].offset = (count / 2) + '%';
+		      flightPathOptions.set('icons', icons);
+		  }, 20);
+		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
