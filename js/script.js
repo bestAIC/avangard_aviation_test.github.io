@@ -532,7 +532,7 @@ $(function() {
 
         	} // calcData
 
-        	$('#air_map-from, #air_map-to').change(calcData);
+        	$('#air_map-from-styler, #air_map-to-styler').change(calcData);
 			
 		} // init
 
