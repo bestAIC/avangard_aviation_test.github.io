@@ -11,7 +11,7 @@ if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i) && window.innerHeight != d
 
   window.addEventListener("scroll", fixViewportHeight, false);
   window.addEventListener("orientationchange", fixViewportHeight, false);
-  fixViewportHeight();
+  // fixViewportHeight();
 
   document.body.style.webkitTransform = "translate3d(0,0,0)";
 }
