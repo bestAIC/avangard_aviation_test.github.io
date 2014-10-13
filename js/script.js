@@ -489,58 +489,44 @@ $(function() {
         	function calcData(){
         		var GoFrom = $('#air_map-from-styler');
         		var GoTo = $('#air_map-to-styler');
-        		// var selFromOpt = $('option', GoFrom);
-        		// var selToOpt = $('option', GoTo);
-
-        		// function optionAddClass(){
-        		// 	var txt = $(this).text();
-        		// 	$(this).removeClass('selected');
-        		// 	if(liSelect.text() == txt){
-        		// 		$(this).addClass('selected');
-        		// 	}
-        		// } 
-        		// selToOpt.each(optionAddClass);
-        		// selFromOpt.each(optionAddClass);
-        		// функция присвоения класса selected к option
-        		var selToX = 0,
-        			selToY = 0,
-        			selFromX = 0,
-        			selFromY = 0;
       			
   				var selToX = $('li.selected', GoTo).data('tox'),
   					selToY = $('li.selected', GoTo).data('toy'),
   					selFromX = $('li.selected', GoFrom).data('fromx'),
   					selFromY = $('li.selected', GoFrom).data('fromy');
+				
+				console.log('selToX: ' + selToX + ' selToY: ' + selToY + ' selFromX: ' + selFromX + ' selFromY: ' + selFromY)
 
-      			clerPath();	// удаляем старые координаты
+				if((selToX && selToY !== 'undefined') || (selFromX && selFromY !== 'undefined')){
 
-        		var flightPlanCoordinates = [
-        			new google.maps.LatLng(selFromX, selFromY), // from
-        			new google.maps.LatLng(selToX, selToY) // to
-        		];
+	        		var flightPlanCoordinates = [
+	        			new google.maps.LatLng(selFromX, selFromY), // from
+	        			new google.maps.LatLng(selToX, selToY) // to
+	        		];
 
-        		var lineSymbol = {
-        		  path: 'M 0,-1 0,1',
-        		  strokeOpacity: 2,
-        		  scale: 3
-        		};
+	        		clerPath();	// удаляем старые координаты
 
-        		flightPathOptions = new google.maps.Polyline({
-        			path: flightPlanCoordinates,
-        			geodesic: true,
-        			strokeColor: '#ffb500',
-        			strokeOpacity: 1,
-        			strokeWeight: 2,
-        			icons: [{
-        				icon: {path: google.maps.SymbolPath.FORWARD_OPEN_ARROW},
-        				offset: '80%'
-        			}],
-        			map: map
-        		});
+	        		var lineSymbol = {
+	        		  path: 'M 0,-1 0,1',
+	        		  strokeOpacity: 2,
+	        		  scale: 3
+	        		};
 
+	        		flightPathOptions = new google.maps.Polyline({
+	        			path: flightPlanCoordinates,
+	        			geodesic: true,
+	        			strokeColor: '#ffb500',
+	        			strokeOpacity: 1,
+	        			strokeWeight: 2,
+	        			icons: [{
+	        				icon: {path: google.maps.SymbolPath.FORWARD_OPEN_ARROW},
+	        				offset: '80%'
+	        			}],
+	        			map: map
+	        		});
 
-        		animateCircle()
-        		flighhArr.push(flightPathOptions);
+	        		flighhArr.push(flightPathOptions);
+	        	}
 
         	} // calcData
 
@@ -548,16 +534,16 @@ $(function() {
 			
 		} // init
 
-		function animateCircle() {
-		    var count = 0;
-		    offsetId = window.setInterval(function() {
-		      count = (count + 1) % 200;
+		// function animateCircle() {
+		//     var count = 0;
+		//     offsetId = window.setInterval(function() {
+		//       count = (count + 1) % 200;
 
-		      var icons = flightPathOptions.get('icons');
-		      icons[0].offset = (count / 2) + '%';
-		      flightPathOptions.set('icons', icons);
-		  }, 20);
-		}
+		//       var icons = flightPathOptions.get('icons');
+		//       icons[0].offset = (count / 2) + '%';
+		//       flightPathOptions.set('icons', icons);
+		//   }, 20);
+		// }
 
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
