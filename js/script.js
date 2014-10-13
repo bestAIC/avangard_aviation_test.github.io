@@ -131,8 +131,19 @@ $(function() {
 			imgTo = $('.js-animate_to'),
 			posA1 = imgTo.offset().top;
 
+		var windowInnerHeight = window.innerHeight;
+
+		setInterval(function() {
+		    if (windowInnerHeight != window.innerHeight) {
+		        windowInnerHeight = window.innerHeight;
+		        resize();
+		        window.scrollTo(0, 0);
+		    }
+		}, 500);
+
 		contFirst.css({
 			position: 'relative',
+			top: 0,
 			height: windowH
 		});
 		
@@ -475,11 +486,10 @@ $(function() {
       		// });
 
         	function calcData(){
-        		var liSelect = $(this);
         		var GoFrom = $('#air_map-from-styler');
         		var GoTo = $('#air_map-to-styler');
-        		var selFromOpt = $('option', GoFrom);
-        		var selToOpt = $('option', GoTo);
+        		// var selFromOpt = $('option', GoFrom);
+        		// var selToOpt = $('option', GoTo);
 
         		// function optionAddClass(){
         		// 	var txt = $(this).text();
