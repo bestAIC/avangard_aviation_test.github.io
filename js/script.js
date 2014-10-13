@@ -166,6 +166,7 @@ $(function() {
 		}
 		
 		btn.on('click', function(){
+			console.log(111)
 			$('body').animate({
 				scrollTop: $('.js-animate_to').offset().top
 			}, 800)
