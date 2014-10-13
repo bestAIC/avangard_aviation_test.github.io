@@ -989,6 +989,9 @@ BUTTON.btn {
 	cursor: pointer;
 }
 
+.intro{
+	padding-top: 34px;
+}
 .intro,
 .text H2 {
 	max-width: 1180px;

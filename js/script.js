@@ -62,6 +62,15 @@ $(function() {
 		$('#map').mapAnimate();
 	}
 
+	if($('#leave_request').length){
+		$('.lang_btn').on('click', function(e){
+			e.preventDefault();
+			pos = $('#leave_request').offset().top;
+			$('body').animate({scrollTop: +pos}, 800);
+			
+		});
+	}
+
 });
 
 
