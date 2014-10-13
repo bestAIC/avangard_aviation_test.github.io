@@ -1,5 +1,6 @@
 var win = $(window),
 	windowH = win.height();
+	
 
 $(function() {
 
@@ -130,11 +131,8 @@ $(function() {
 			imgTo = $('.js-animate_to'),
 			posA1 = imgTo.offset().top;
 
-		window.scrollTo(0, 0);
-
 		contFirst.css({
 			position: 'relative',
-			top: 0,
 			height: windowH
 		});
 		
