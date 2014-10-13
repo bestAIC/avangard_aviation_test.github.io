@@ -476,12 +476,15 @@ $(function() {
 				if((selToX && selToY !== 'undefined') && (selFromX && selFromY !== 'undefined')){
 					var selFromText = $('li.selected', GoFrom).text();
 					var selToText = $('li.selected', GoTo).text();
-					var myHtml = $('#air_map-data').find('.' + selFromText.toLowerCase() + '.' + selToText.toLowerCase()).children();
+					var myHtml = $('#air_map-data').find('.' + selFromText.toLowerCase() + '.' + selToText.toLowerCase()).html();
 
-					$('.map_city_icon .maps_placeholder').html(myHtml);
+					console.log(myHtml)
+
+
 					$('.map_city_icon').removeClass('current');
 					$('.map_city_icon').parent().find('.'+selFromText.toLowerCase()).addClass('current start');
 					$('.map_city_icon').parent().find('.'+selToText.toLowerCase()).addClass('current end');
+					$('.map_city_icon .maps_placeholder').html(myHtml);
 
 	        		var flightPlanCoordinates = [
 	        			new google.maps.LatLng(selFromX, selFromY), // from
