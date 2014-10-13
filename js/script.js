@@ -471,7 +471,7 @@ $(function() {
 
 
           	$('#air_map-from option').click(function(){
-      			alert(111);
+      			$('.air_map-block h2').text('click na option');
       		});
 
         	function calcData(){
