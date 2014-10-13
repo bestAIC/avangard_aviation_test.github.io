@@ -3,16 +3,13 @@ var win = $(window),
 	
 if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i) && window.innerHeight != document.documentElement.clientHeight) {
   var fixViewportHeight = function() {
-    document.documentElement.style.height = window.innerHeight + "px";
-    if (document.body.scrollTop !== 0) {
+    // document.documentElement.style.height = window.innerHeight + "px";
+    if (document.body.scrollTop == 0) {
       window.scrollTo(0, 0);
     }
   }.bind(this);
 
-  $(window).on('scroll', function(){
-  	fixViewportHeight = 0;
-  })
-  // window.addEventListener("scroll", fixViewportHeight, false);
+  window.addEventListener("scroll", fixViewportHeight, false);
   window.addEventListener("orientationchange", fixViewportHeight, false);
   fixViewportHeight();
 }
