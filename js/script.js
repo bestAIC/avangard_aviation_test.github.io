@@ -7,10 +7,10 @@ if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i) && window.innerHeight != d
 		if (document.body.scrollTop !== 0) {
 			window.scrollTo(0, 0);
 		}
-		$('#js-cont-height').css({'position': 'relative'})
+		$('#js-cont-height').css({'position': 'relative', 'height': '5000px'})
 	}.bind(this);
 
-	window.addEventListener("scroll", fixViewportHeight, false);
+	// window.addEventListener("scroll", fixViewportHeight, false);
 	window.addEventListener("orientationchange", fixViewportHeight, false);
 	fixViewportHeight();
 }	
