@@ -892,6 +892,7 @@ BUTTON.btn {
 	display: table;
 	max-width: 1180px;
 	margin: 0 auto;
+	z-index: 10;
 }
 .collage.first P{
 	font-family: 'helveticaneuecyrultralight', sans-serif;

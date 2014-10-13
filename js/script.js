@@ -1,6 +1,18 @@
 var win = $(window),
 	windowH = win.height();
-	
+
+
+	  if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i) && window.innerHeight != document.documentElement.clientHeight) {
+	  var fixViewportHeight = function() {
+	    if (document.body.scrollTop !== 0) {
+	      window.scrollTo(0, 0);
+	    }
+	  }.bind(this);
+
+	  window.addEventListener("scroll", fixViewportHeight, false);
+	  window.addEventListener("orientationchange", fixViewportHeight, false);
+	  fixViewportHeight();
+	}	
 
 $(function() {
 
