@@ -1,18 +1,5 @@
 var win = $(window),
 	windowH = win.height();
-	
-if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i) && window.innerHeight != document.documentElement.clientHeight) {
-  var fixViewportHeight = function() {
-    // document.documentElement.style.height = window.innerHeight + "px";
-    if (document.body.scrollTop == 0) {
-      window.scrollTo(0, 0);
-    }
-  }.bind(this);
-
-  window.addEventListener("scroll", fixViewportHeight, false);
-  window.addEventListener("orientationchange", fixViewportHeight, false);
-  fixViewportHeight();
-}
 
 $(function() {
 
@@ -142,6 +129,8 @@ $(function() {
 			btn = $('.js-collage_down', contFirst),
 			imgTo = $('.js-animate_to'),
 			posA1 = imgTo.offset().top;
+
+		window.scrollTo(0, 0);
 
 		contFirst.css({
 			position: 'relative',
