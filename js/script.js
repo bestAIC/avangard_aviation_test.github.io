@@ -488,7 +488,7 @@ $(function() {
         		// функция присвоения класса selected к option
 
         		selFromOpt.click(function(){
-        			alert(111)
+        			alert(111);
         		})
       			
   				var selToX = $('li.selected', GoTo).data('tox'),
