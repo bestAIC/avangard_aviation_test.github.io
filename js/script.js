@@ -476,21 +476,20 @@ $(function() {
         		var selFromOpt = $('option', GoFrom);
         		var selToOpt = $('option', GoTo);
 
-        		// function optionAddClass(){
-        		// 	var txt = $(this).text();
-        		// 	if(liSelect.text() == txt){
-        		// 		$(this).addClass('selected');
-        		// 	}
-        		// } 
-        		// функция присваивания класса selected к option
+        		function optionAddClass(){
+        			var txt = $(this).text();
+        			$(this).removeClass('selected');
+        			if(liSelect.text() == txt){
+        				$(this).addClass('selected');
+        			}
+        		} 
+        		// функция присвоения класса selected к option
 
-        		// selToOpt.each(optionAddClass);
-        		// selFromOpt.each(optionAddClass);
+        		selToOpt.each(optionAddClass);
+        		selFromOpt.each(optionAddClass);
       			
       			if ($(liSelect, GoTo)){
-      				var selToX = liSelect.data('tox'),
-      					selToY = liSelect.data('toy'),
-      					selFromX = $('li.selected', GoFrom).data('fromx'),
+      				var selFromX = $('li.selected', GoFrom).data('fromx'),
       					selFromY = $('li.selected', GoFrom).data('fromy');
       			}
       			if($(liSelect, GoFrom)){
@@ -500,10 +499,6 @@ $(function() {
 
       			$('.jq-selectbox__select-text', GoFrom).data({'fromx': +selFromX, 'fromy': +selFromY});
       			$('.jq-selectbox__select-text', GoTo).data({'tox': +selToX, 'toy': +selToY});
-      			console.log($('.jq-selectbox__select-text', GoFrom).data('fromx'));
-      			console.log($('.jq-selectbox__select-text', GoFrom).data('fromy'));
-      			console.log($('.jq-selectbox__select-text', GoTo).data('tox'));
-      			console.log($('.jq-selectbox__select-text', GoTo).data('toy'));
 
   				// var optFromX = $('option.selected', GoFrom).data('fromx');
   				// var optFromY = $('option.selected', GoFrom).data('fromy');
