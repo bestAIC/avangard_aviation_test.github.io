@@ -7,12 +7,14 @@ if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i) && window.innerHeight != d
     if (document.body.scrollTop !== 0) {
       window.scrollTo(0, 0);
     }
-  }
-  fixViewportHeight();
-  window.addEventListener("scroll", fixViewportHeight, false);
-  window.addEventListener("orientationchange", fixViewportHeight, false);
+  }.bind(this);
 
-  document.body.style.webkitTransform = "translate3d(0,0,0)";
+  $(window).on('scroll', function(){
+  	fixViewportHeight = 0;
+  })
+  // window.addEventListener("scroll", fixViewportHeight, false);
+  window.addEventListener("orientationchange", fixViewportHeight, false);
+  fixViewportHeight();
 }
 
 $(function() {
