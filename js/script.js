@@ -488,14 +488,16 @@ $(function() {
         		selToOpt.each(optionAddClass);
         		selFromOpt.each(optionAddClass);
       			
-      			if ($(liSelect, GoTo)){
-      				var selFromX = $('option.selected', GoFrom).data('fromx'),
-      					selFromY = $('option.selected', GoFrom).data('fromy');
-      			}
-      			if($(liSelect, GoFrom)){
-  					var selToX = $('option.selected', GoTo).data('tox'),
-  						selToY = $('option.selected', GoTo).data('toy');
-      			}
+      			// if ($(liSelect, GoTo).hasClass('selected')){
+      				var selToX = $('li.selected', GoTo).data('tox'),
+      					selToY = $('li.selected', GoTo).data('toy'),
+      					selFromX = $('li.selected', GoFrom).data('fromx'),
+      					selFromY = $('li.selected', GoFrom).data('fromy');
+      			// }
+      	// 		if($(liSelect, GoFrom).hasClass('selected')){
+  					// var selToX = $('li.selected', GoTo).data('tox'),
+  					// 	selToY = $('li.selected', GoTo).data('toy');
+      	// 		}
 
       			$('.jq-selectbox__select-text', GoFrom).data({'fromx': +selFromX, 'fromy': +selFromY});
       			$('.jq-selectbox__select-text', GoTo).data({'tox': +selToX, 'toy': +selToY});
