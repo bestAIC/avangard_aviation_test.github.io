@@ -1574,6 +1574,9 @@ html.tablet #animate_index_8 .collage_text-b{
 	display: inline-block;
 	margin-right: 28px;
 }
+.air_map-block form option:first-child{
+	display: none;
+}
 
 /* /air_map-form */
 
