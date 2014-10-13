@@ -142,16 +142,14 @@ $(function() {
 			imgTo = $('.js-animate_to'),
 			posA1 = imgTo.offset().top;
 
-		
+		contFirst.css({
+			position: 'relative',
+			height: windowH
+		})
 		
 		win.on('scroll', myScroll1);
 
 		function myScroll1(){
-			contFirst.css({
-				position: 'relative',
-				height: windowH
-			})
-
 			var topScroll = win.scrollTop(),
 				scrollPos = topScroll + windowH;
 
