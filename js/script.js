@@ -130,16 +130,6 @@ $(function() {
 			imgTo = $('.js-animate_to'),
 			posA1 = imgTo.offset().top;
 
-		var windowInnerHeight = window.innerHeight;
-
-		setInterval(function() {
-		    if (windowInnerHeight != window.innerHeight) {
-		        windowInnerHeight = window.innerHeight;
-		        resize();
-		        window.scrollTo(0, 0);
-		    }
-		}, 500);
-
 		contFirst.css({
 			position: 'relative',
 			top: 0,
@@ -500,6 +490,10 @@ $(function() {
         		// selToOpt.each(optionAddClass);
         		// selFromOpt.each(optionAddClass);
         		// функция присвоения класса selected к option
+        		var selToX = 0,
+        			selToY = 0,
+        			selFromX = 0,
+        			selFromY = 0;
       			
   				var selToX = $('li.selected', GoTo).data('tox'),
   					selToY = $('li.selected', GoTo).data('toy'),
