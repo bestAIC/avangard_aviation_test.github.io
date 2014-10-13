@@ -146,7 +146,7 @@ $(function() {
 		contFirst.css({
 			position: 'relative',
 			top: 0,
-			height: windowH
+			height: '5000px'
 		});
 		
 		win.on('scroll', myScroll1);
