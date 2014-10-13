@@ -7,6 +7,7 @@ if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i) && window.innerHeight != d
 		if (document.body.scrollTop !== 0) {
 			window.scrollTo(0, 0);
 		}
+		$('#js-cont-height').css({'position': 'relative'})
 	}.bind(this);
 
 	window.addEventListener("scroll", fixViewportHeight, false);
