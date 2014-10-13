@@ -1,19 +1,6 @@
 var win = $(window),
 	windowH = win.height();
 	
-if (navigator.userAgent.match(/iPad;.*CPU.*OS 7_\d/i) && window.innerHeight != document.documentElement.clientHeight) {
-	var fixViewportHeight = function() {
-		// document.documentElement.style.height = window.innerHeight + "px";
-		if (document.body.scrollTop !== 0) {
-			window.scrollTo(0, 0);
-		}
-		$('#js-cont-height').css({'position': 'relative', 'height': '5000px'})
-	}.bind(this);
-
-	// window.addEventListener("scroll", fixViewportHeight, false);
-	window.addEventListener("orientationchange", fixViewportHeight, false);
-	fixViewportHeight();
-}	
 
 $(function() {
 
@@ -144,9 +131,7 @@ $(function() {
 			posA1 = imgTo.offset().top;
 
 		contFirst.css({
-			position: 'relative',
-			top: 0,
-			height: '5000px'
+			position: 'relative'
 		});
 		
 		win.on('scroll', myScroll1);
