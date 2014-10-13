@@ -497,8 +497,8 @@ $(function() {
 				
 				console.log('selToX: ' + selToX + ' selToY: ' + selToY + ' selFromX: ' + selFromX + ' selFromY: ' + selFromY)
 
-				if((selToX && selToY !== 'undefined') || (selFromX && selFromY !== 'undefined')){
-
+				if((selToX && selToY !== 'undefined') && (selFromX && selFromY !== 'undefined')){
+					console.log(111)
 	        		var flightPlanCoordinates = [
 	        			new google.maps.LatLng(selFromX, selFromY), // from
 	        			new google.maps.LatLng(selToX, selToY) // to
