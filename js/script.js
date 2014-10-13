@@ -470,7 +470,7 @@ $(function() {
           	} // функция сброса путей
 
 
-          	$('#air_map-from option').change(function(){
+          	$('#air_map-from').change(function(){
       			$('.air_map-block h2').text('click na option');
       		});
 
