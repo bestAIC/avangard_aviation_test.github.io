@@ -473,7 +473,6 @@ $(function() {
 
         		selToOpt.each(optionAddClass);
         		selFromOpt.each(optionAddClass);
-
       			
       			if ($(liSelect, GoTo)){
       				var selToX = liSelect.data('tox'),
@@ -487,8 +486,6 @@ $(function() {
       			}
 
       			clerPath();	// удаляем старые координаты
-
-      			console.log('selFromX: ' + selFromX + ', ' + 'selFromY: ' + selFromY + '; selToX: ' + selToX + ', ' + 'selToY: ' + selToY)
 
         		var flightPlanCoordinates = [
         			new google.maps.LatLng(selFromX, selFromY), // from
@@ -514,7 +511,7 @@ $(function() {
         			map: map
         		});
 
-        		animateCircle();
+
         		flighhArr.push(flightPathOptions);
 
         	} // calcData
@@ -523,16 +520,16 @@ $(function() {
 			
 		} // init
 
-		function animateCircle() {
-		    var count = 0;
-		    offsetId = window.setInterval(function() {
-		      count = (count + 1) % 200;
+		// function animateCircle() {
+		//     var count = 0;
+		//     offsetId = window.setInterval(function() {
+		//       count = (count + 1) % 200;
 
-		      var icons = flightPathOptions.get('icons');
-		      icons[0].offset = (count / 2) + '%';
-		      flightPathOptions.set('icons', icons);
-		  }, 20);
-		}
+		//       var icons = flightPathOptions.get('icons');
+		//       icons[0].offset = (count / 2) + '%';
+		//       flightPathOptions.set('icons', icons);
+		//   }, 20);
+		// }
 
 		google.maps.event.addDomListener(window, 'load', initialize);
 	}
