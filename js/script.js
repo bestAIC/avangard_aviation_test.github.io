@@ -57,7 +57,6 @@ $(function() {
 		selectSmartPositioning: false,
 		selectSearchLimit: 7
 	});
-	$('select').trigger('refresh');
 
 	if($('#map').length){
 		$('#map').mapAnimate();
