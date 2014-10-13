@@ -880,7 +880,7 @@ BUTTON.btn {
 	padding: 0 20px;
 }
 .collage.first{
-	position: relative;
+	position: absolute;
 	z-index: 9;
 	height: 100%;
 	min-width: 100%;
