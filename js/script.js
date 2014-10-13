@@ -487,7 +487,7 @@ $(function() {
         		// selFromOpt.each(optionAddClass);
         		// функция присвоения класса selected к option
 
-        		selFromOpt.click(function(){
+        	$('#air_map-from option').click(function(){
         			alert(111);
         		})
       			
