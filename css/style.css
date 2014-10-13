@@ -1678,5 +1678,8 @@ html.tablet #animate_index_8 .collage_text-b{
 	font-size: 16px;
 	color: #556a7c;
 }
+.jq-selectbox__select-text.placeholder{
+	color: #929292;
+}
 
 

@@ -57,6 +57,7 @@ $(function() {
 		selectSmartPositioning: false,
 		selectSearchLimit: 7
 	});
+	$('select').trigger('refresh');
 
 	if($('#map').length){
 		$('#map').mapAnimate();
@@ -66,7 +67,7 @@ $(function() {
 		$('.lang_btn').on('click', function(e){
 			e.preventDefault();
 			pos = $('#leave_request').offset().top;
-			$('body').animate({scrollTop: +pos}, 800);
+			$('body').animate({scrollTop: +pos}, 1000);
 			
 		});
 	}
@@ -364,22 +365,25 @@ $(function() {
   	        var mapOptions = {
   	            center: new google.maps.LatLng(41.608168, 21.595281),
   	            zoom: 2,
-                  zoomControl: false,
-                  disableDoubleClickZoom: false,
-                  mapTypeControl: false,
-                  scaleControl: false,
-                  scrollwheel: false,
-                  panControl: false,
-                  streetViewControl: false,
-                  draggable : false,
-                  backgroundColor: {
-                      stroke: '#ffffff',
-                      strokeWidth: '2'
-                  },
-                  overviewMapControl: false,
-                  overviewMapControlOptions: {
-                      opened: false,
-                  },
+				zoomControl: false,
+				disableDefaultUI: false,
+				disableDoubleClickZoom: false,
+				maxZoom: 2,
+				minZoom: 2,
+				mapTypeControl: false,
+				scaleControl: false,
+				scrollwheel: false,
+				panControl: false,
+				streetViewControl: false,
+				draggable : false,
+				backgroundColor: {
+					stroke: '#ffffff',
+					strokeWidth: '2'
+				},
+				overviewMapControl: false,
+				overviewMapControlOptions: {
+				opened: false,
+				},
   	            mapTypeId: google.maps.MapTypeId.ROADMAP,
   	            styles: [
   	            	{
@@ -472,29 +476,34 @@ $(function() {
         		var selFromOpt = $('option', GoFrom);
         		var selToOpt = $('option', GoTo);
 
-        		function optionAddClass(){
-        			var txt = $(this).text();
-        			if(liSelect.text() == txt){
-        				$(this).addClass('selected');
-        			}
-        		} 
+        		// function optionAddClass(){
+        		// 	var txt = $(this).text();
+        		// 	if(liSelect.text() == txt){
+        		// 		$(this).addClass('selected');
+        		// 	}
+        		// } 
         		// функция присваивания класса selected к option
 
-        		selToOpt.each(optionAddClass);
-        		selFromOpt.each(optionAddClass);
+        		// selToOpt.each(optionAddClass);
+        		// selFromOpt.each(optionAddClass);
       			
       			if ($(liSelect, GoTo)){
       				var selToX = liSelect.data('tox'),
       					selToY = liSelect.data('toy'),
       					selFromX = $('li.selected', GoFrom).data('fromx'),
-      					selFromY = $('li.selected', GoFrom).data('fromy'),
-      					fromCurTxt = $('.jq-selectbox__select-text', GoFrom).data({'fromx': +selFromX, 'fromy': +selFromY});
+      					selFromY = $('li.selected', GoFrom).data('fromy');
       			}
       			if($(liSelect, GoFrom)){
   					var selToX = $('li.selected', GoTo).data('tox'),
   						selToY = $('li.selected', GoTo).data('toy');
-  						toCurTxt = $('.jq-selectbox__select-text', GoTo).data({'tox': +selToX, 'toy': +selToY});
       			}
+
+      			$('.jq-selectbox__select-text', GoFrom).data({'fromx': +selFromX, 'fromy': +selFromY});
+      			$('.jq-selectbox__select-text', GoTo).data({'tox': +selToX, 'toy': +selToY});
+      			console.log($('.jq-selectbox__select-text', GoFrom).data('fromx'));
+      			console.log($('.jq-selectbox__select-text', GoFrom).data('fromy'));
+      			console.log($('.jq-selectbox__select-text', GoTo).data('tox'));
+      			console.log($('.jq-selectbox__select-text', GoTo).data('toy'));
 
   				// var optFromX = $('option.selected', GoFrom).data('fromx');
   				// var optFromY = $('option.selected', GoFrom).data('fromy');
@@ -526,6 +535,7 @@ $(function() {
         			}],
         			map: map
         		});
+
 
 
         		flighhArr.push(flightPathOptions);
