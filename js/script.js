@@ -470,9 +470,9 @@ $(function() {
           	} // функция сброса путей
 
 
-          	$('#air_map-from').change(function(){
-      			$('.air_map-block h2').text('click na option');
-      		});
+        //   	$('#air_map-from').change(function(){
+      		// 	$('.air_map-block h2').text('click na option');
+      		// });
 
         	function calcData(){
         		var liSelect = $(this);
@@ -529,7 +529,7 @@ $(function() {
 
         	} // calcData
 
-        	$('#air_map-from-styler li, #air_map-to-styler li').on('focus click', calcData);
+        	$('#air_map-from, #air_map-to').change(calcData);
 			
 		} // init
 
