@@ -80,16 +80,14 @@ $(function() {
 		});
 	}
 
-	$('.slick-plain').slick({
-		infinite: true,
-		slidesToShow: 1,
-		slidesToScroll: 1,
-		dots: true
-	})
-
-	// if($('#air_btn-toogle').length){
-	// 	$('#air_btn-toogle').airPlaneSlider();
-	// }
+	if($('.slick-plain').length){
+		$('.slick-plain').slick({
+			infinite: true,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			dots: true
+		})
+	}
 	
 
 });

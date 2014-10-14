@@ -1167,6 +1167,7 @@ BUTTON.btn {
 	height: 120px;
 	margin: -100px;
 	margin-left: -25%;
+	z-index: 10;
 }
 .collage .collage_img{
 	height: 100%;
