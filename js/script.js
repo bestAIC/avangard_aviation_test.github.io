@@ -62,10 +62,6 @@ $(function() {
 
 	$('#header .lang_dropdown').menuLangShow();
 
-	if($('#air_btn-toogle').length){
-		$('#air_btn-toogle').airBtnToogle();
-	}
-
 	$('select').styler({
 		selectSmartPositioning: false,
 		selectSearchLimit: 7
@@ -83,6 +79,18 @@ $(function() {
 			
 		});
 	}
+
+	$('.slick-plain').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		dots: true
+	})
+
+	// if($('#air_btn-toogle').length){
+	// 	$('#air_btn-toogle').airPlaneSlider();
+	// }
+	
 
 });
 
@@ -538,44 +546,33 @@ $(function() {
 })(jQuery);
 
 
+// (function(){
+// 	$.fn.airPlaneSlider = function(){
+// 		var that = $(this),
+// 			dots = $('.slick-dots li', that);
+// 		var slideArr = [];
+// 		var obj = {};
+
+// 			$('.about_race-wrap', that).each(function(){				
+// 				var arr = $(this).data('air');
+// 				slideArr.push(arr)
+// 			})
+
+// 			function unique(arr){
+// 				for(var i = 0; i < arr.length; i++){
+// 					var str = arr[i];
+// 					obj[str] = true;
+// 				}
+// 				return Object.keys(obj);
+// 			}
+// 			unique(slideArr)
 
 
-(function($){
-	$.fn.airBtnToogle = function(){
-		var cont = $(this),
-			btnBlock = $('.btn_toogle', cont),
-			table = $('.about_raice'),
-			cols = $('.num', table),
-			btnCur  = $('.btn.current', btnBlock);
-
-		// var airDate = {
-		//   "aircrafts": [
-		//     ["3 242","997","9","14 000","3 342"],
-		//     ["7 321",231,34,"5 000","9 123"]
-		//   ]
-		// };
-		// var airDateStr = JSON.stringify(airDate);
-		// var arr1 = airDate.aircrafts[0];
-		// var arr2 = airDate.aircrafts[1];
-
-		
-		btnBlock.on('click', '.btn:not(.current)', function(){
-			$(this).addClass('current').siblings().removeClass('current').parents('#air_btn-toogle').find('.about_race-wrap').eq($(this).index()).fadeIn(450).siblings('.about_race-wrap').hide();
-			// cols.text('');
-			// var colsArr = cols.toArray();
-
-			// if($(this).data('air') == 'Citation X'){
-			// 	cols.splice(0,5,"3 242","997","9","14 000","3 342");
-			// }
-
-			// if($(this).data('air') == 'Legacy 600'){
-			// 	for(var i = 0; i < arr2.length; i++){
-			// 		cols.text(arr2[i]);
-			// 	}
-			// }
-		});
-
-
-	}
-})(jQuery);
-
+// 			for(var prop in obj){
+// 				obj[prop] = prop;
+// 				console.log(obj["Citation X"]);
+// 				console.log(obj["Legacy 600"]);
+// 				dots.find('button').text('').append(prop);
+// 			}
+// 	}
+// })(jQuery);
