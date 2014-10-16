@@ -1793,7 +1793,7 @@ html.tablet #animate_index_8 .collage_text-b{
 	color: transparent;
 }
 #air_btn-toogle .slick-dots li button:before{
-	content: 'Legacy 600';
+	content: 'Citation X';
 	opacity: 1;
 	font-size: 18px;
 	color: #3c2f00;
@@ -1805,7 +1805,7 @@ html.tablet #animate_index_8 .collage_text-b{
 	display: inline-block;
 }
 #air_btn-toogle .slick-dots li:first-child button:before{
-	content: 'Citation X';
+	content: 'Legacy 600';
 }
 
 /* /#air_btn-toogle */
