@@ -172,7 +172,6 @@ $(function() {
 		}
 		
 		btn.on('click', function(){
-			console.log(111)
 			$('body').animate({
 				scrollTop: $('.js-animate_to').offset().top
 			}, 800)
@@ -483,8 +482,6 @@ $(function() {
 					var selFromText = $('li.selected', GoFrom).text();
 					var selToText = $('li.selected', GoTo).text();
 					var myHtml = $('#air_map-data').find('.' + selFromText.toLowerCase() + '.' + selToText.toLowerCase()).html();
-
-					console.log(myHtml)
 
 
 					$('.map_city_icon').removeClass('current');
